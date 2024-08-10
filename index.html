@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products || Buy / Sells Corner</title>
+
+    <!-- ., Font Awesome Cdn -->
+    <script src="https://kit.fontawesome.com/0ae0890014.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- ., Navbar started -->
+  <div class="navbar bg-[#4C68FF] text-white">
+      <div class="flex-1">
+        <a class="text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl pl-[20px]  font-thin sm:font-light md:font-normal lg:font-medium">Buy / Sells Corner</a>
+      </div>
+      <!-- <div class="flex-none">
+        <div class="dropdown dropdown-end">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+            <div class="indicator">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+              <span class="badge badge-sm indicator-item  text-black">8</span>
+            </div>
+          </div>
+          <div
+            tabindex="0"
+            class="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow  text-black">
+            <div class="card-body">
+              <span class="text-lg font-bold">8 Items</span>
+              <span class="text-info">Subtotal: $999</span>
+              <div class="card-actions">
+                <button class="btn btn-primary btn-block">View cart</button>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div class="dropdown dropdown-end pr-[20px] text-black">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+              <div class="w-6 sm:w-6 md:w-8 lg:-10 rounded-full">
+                <img
+                  alt="Tailwind CSS Navbar component"
+                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+              </div>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+              <li>
+                <a class="justify-between">
+                  Profile
+                  <span class="badge">New</span>
+                </a>
+              </li>
+              <li><a>Settings</a></li>
+              <li><a>Logout</a></li>
+            </ul>
+          </div> -->
+
+          
+          
+          <div class="dropdown-end text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl flex gap-[10px]">
+            <a href="login.html" class="p-[2px] sm:p-[2px] md:p-[3px] lg:p-[5px] border-[1px] rounded-sm shadow-[0px_0px_4px_black] hover:shadow-[0px_0px_5px_white]"><button>Sign In</button></a>
+            <a href="register.html" class="p-[2px] sm:p-[2px] md:p-[3px] lg:p-[5px] border-[1px] rounded-sm shadow-[0px_0px_4px_black] hover:shadow-[0px_0px_5px_white]"><button>Sign Up</button></a>
+                </div>
+
+      </div>
+    </div>
+    
+    <!-- ., Navbar ended -->
+
+    <a href="index.html">Go to login page</a><br>
+    
+    <a href="single-product.html">Single  Product Page</a>
+
+<!-- ., Content section started -->
+<div class="content-conatiner shadow-[2px_2px_5px_gray] mx-[30px] my-[20px] bg-orange-50 px-[120px] py-[30px] border-[blue]">
+<div class="input_section flex items-center">
+  <div class="join w-full">
+    <button class="join-item text-md xs:text-lg sm:text-xl md:text-2xl lg:text-3xl border-l-[1px] border-t-[1px] rounded-sm border-b-[1px]"><i class="fa-solid fa-magnifying-glass px-[20px]"></i></button>
+    <input
+      type="text"
+      placeholder="Search"
+      class="w-full join-item pl-[30px] text-md xs:text-lg sm:text-xl md:text-2xl lg:text-3xl p-[5px] bg-orange-50 border-t-[1px] border-b-[1px] " />
+    <button class="join-item text-md xs:text-lg sm:text-xl md:text-2xl lg:text-3xl border-r-[1px] border-t-[1px] rounded-sm border-b-[1px]"><i class="fa-solid fa-filter join-item text-md xs:text-lg sm:text-xl md:text-2xl lg:text-3xl px-[20px]"></i></button>
+  </div>
+
+</div>
+
+<h1 class="mt-[70px] text-xl xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light xs:font-normal sm:font-medium md:font-semibold lg:font-bold">Products</h1>
+<div class="cards-section flex flex-wrap justify-center gap-[50px] mt-[100px]">
+  
+<!-- ., Card -->
+  <div class="card bg-base-100 w-[400px] shadow-xl">
+    <figure>
+      <img
+      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      alt="Shoes" />
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">Shoes!</h2>
+      <p>If a dog chews shoes whose shoes does he choose?</p>
+      <div class="card-actions flex justify-between items-center mt-[10px]">
+        <h1 class="text-2xl font-light xs:font-light sm:font-medium md:font-normal lg:font-semibold">RS 10,000</h1>
+        <button class="bg-pink-500 p-[10px] rounded-lg text-sm xs:text-md sm:text-md md:text-lg lg:text-xl text-white shadow-[2px_2px_5px_black] hover:shadow-[3px_3px_4px_black]">Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card bg-base-100 w-[400px] shadow-xl">
+    <figure>
+      <img
+      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      alt="Shoes" />
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">Shoes!</h2>
+      <p>If a dog chews shoes whose shoes does he choose?</p>
+      <div class="card-actions flex justify-between items-center mt-[10px]">
+        <h1 class="text-2xl font-light xs:font-light sm:font-medium md:font-normal lg:font-semibold">RS 10,000</h1>
+        <button class="bg-pink-500 p-[10px] rounded-lg text-sm xs:text-md sm:text-md md:text-lg lg:text-xl text-white shadow-[2px_2px_5px_black] hover:shadow-[3px_3px_4px_black]">Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card bg-base-100 w-[400px] shadow-xl">
+    <figure>
+      <img
+      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      alt="Shoes" />
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">Shoes!</h2>
+      <p>If a dog chews shoes whose shoes does he choose?</p>
+      <div class="card-actions flex justify-between items-center mt-[10px]">
+        <h1 class="text-2xl font-light xs:font-light sm:font-medium md:font-normal lg:font-semibold">RS 10,000</h1>
+        <button class="bg-pink-500 p-[10px] rounded-lg text-sm xs:text-md sm:text-md md:text-lg lg:text-xl text-white shadow-[2px_2px_5px_black] hover:shadow-[3px_3px_4px_black]">Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card bg-base-100 w-[400px] shadow-xl">
+    <figure>
+      <img
+      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      alt="Shoes" />
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">Shoes!</h2>
+      <p>If a dog chews shoes whose shoes does he choose?</p>
+      <div class="card-actions flex justify-between items-center mt-[10px]">
+        <h1 class="text-2xl font-light xs:font-light sm:font-medium md:font-normal lg:font-semibold">RS 10,000</h1>
+        <button class="bg-pink-500 p-[10px] rounded-lg text-sm xs:text-md sm:text-md md:text-lg lg:text-xl text-white shadow-[2px_2px_5px_black] hover:shadow-[3px_3px_4px_black]">Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+
+
+</div>
+<!-- ., Content section ended -->
+
+
+
+
+
+
+    <!-- ., Daisy Ui Cdn-->
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+<!-- .,Tailwind CSS CDn -->
+<script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>
