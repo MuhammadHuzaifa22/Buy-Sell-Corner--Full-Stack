@@ -15,7 +15,11 @@ const passwordRegex = /^[A-Z](?=.*\d)[A-Za-z\d]{5,9}$/;
 // ., Form Button Function
 form.addEventListener('submit', (event) => {
     event.preventDefault();
-    if(firstName.value === '' )
+    if(firstName.value === '' || firstName.value === null){
+        alert(`Please fill -First Name- field`)
+    }else{
+        
+    }
     if (firstNameRegex.test(firstName.value)) {
 
         if (passwordRegex.test(password.value)) {
