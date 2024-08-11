@@ -64,12 +64,22 @@ googleBtn.addEventListener('click',()=>{
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
       const user = result.user;
+      console.log(toast);
       console.log(user);
+      toast.style.display = 'block'
+  toast.innerHTML = `<div class="toast toast-top toast-center mt-[70px]">
+  <div class="alert alert-success">
+    <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">Log in Successfull</span>
+   </div>
+       </div>`
+      setTimeout(() => {        
+          toast.style.display = 'none';
+          window.location = 'index.html'
+        
+    }, 1200);
+
     }).catch((error) => {
-      const errorCode = error.code;
       const errorMessage = error.message;
-      const email = error.customData.email;
-      const credential = GoogleAuthProvider.credentialFromError(error);
       alert(errorMessage);
     });
 

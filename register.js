@@ -16,18 +16,27 @@ const myModal = document.getElementById('my_modal_3');
 const userProfileImage = document.getElementById('user-profile-image');
 const registerEmailMessage = document.getElementById('register-email-message');
 const crossButton = document.getElementById('cross-button');
+const registerBtn = document.getElementById('register-btn');
+const loadingGif = document.getElementById('loading-gif');
+const loadingMsg = document.getElementById('loading-msg');
+const uploadImageTag = document.getElementById('upload-image-tag');
+const uploadFileName = document.getElementById('upload-file-name');
 
-// Regex
+uploadImageTag.innerHTML = 'Upload Profile Photo';
+loadingMsg.style.display = 'none';
+loadingGif.style.display = 'none';
+
+// .,Regex
 const firstNameRegex = /^[A-Z][a-zA-Z]{3,9}$/;
 const lastNameRegex = /^[A-Z][a-zA-Z]{3,9}$/;
 const passwordRegex = /^[A-Z](?=.*\d)[A-Za-z\d]{5,9}$/;
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// Form Button Function
+// .,Form Button Function
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    
+
     if (firstName.value === '' || lastName.value === '' || email.value === '' || password.value === '' || userPhoto.files.length === 0) {
         alert('Please fill all fields and upload a photo.');
         return;
@@ -56,10 +65,20 @@ form.addEventListener('submit', async (event) => {
         alert("Your password must:\n- Start with an uppercase letter\n- Be between 6 and 10 characters long\n- Include at least one number");
         return;
     }
+    uploadFileName.addEventListener('click',()=>{
+        console.log('btn work')
+        console.log(userPhoto.files[0])
+        uploadImageTag.innerHTML = userPhoto.files[0].name
+        
+        
+    })
 
     try {
-
         const userCredential = await createUserWithEmailAndPassword(auth, email.value, password.value);
+        form.style.display = 'none';
+        loadingMsg.style.display = 'block';
+        loadingMsg.innerHTML = 'Registering...'
+        loadingGif.style.display = 'block';
         const user = userCredential.user;
         const file = userPhoto.files[0];
         const storageRef = ref(storage, `userPhotos/${user.uid}/${file.name}`);
@@ -67,6 +86,16 @@ form.addEventListener('submit', async (event) => {
         const photoURL = await getDownloadURL(storageRef);
         console.log('Photo URL:', photoURL);
         userProfileImage.src = photoURL;
+        console.log(registerBtn.textContent);
+
+        msgRegistered.innerHTML = `${firstName.value} ${lastName.value}`;
+        registerEmailMessage.innerHTML = `<span class="font-light xs:font-normal sm:font-medium md:font-semibold lg:font-bold text-teal-600">You are registered</span> with this email <b>${email.value}</b>`;
+        myModal.showModal();
+
+        form.style.display = 'block'
+        loadingGif.style.display = 'none';
+        loadingMsg.style.display = 'none';
+        loadingMsg.innerHTML = '';
 
         await setDoc(doc(db, 'users', user.uid), {
             uid: user.uid,
@@ -77,16 +106,11 @@ form.addEventListener('submit', async (event) => {
         });
 
 
-        msgRegistered.innerHTML = `${firstName.value} ${lastName.value}`;
-        registerEmailMessage.innerHTML = `<span class="font-light xs:font-normal sm:font-medium md:font-semibold lg:font-bold text-teal-600">You are registered</span> with this email <b>${email.value}</b>`;
-        myModal.showModal();
-
-       
-       firstName.value = '';
-       lastName.value = '';
-       email.value = '';
-       password.value = '';
-        userPhoto.value = ''; 
+        firstName.value = '';
+        lastName.value = '';
+        email.value = '';
+        password.value = '';
+        userPhoto.value = '';
         crossButton.addEventListener('click', () => {
             window.location = 'login.html';
         });

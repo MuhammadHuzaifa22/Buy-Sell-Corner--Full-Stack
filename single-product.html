@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Single Product || Buy / Sells Corner</title>
-
+    <!-- ., Daisy Ui Cdn-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!-- .,Tailwind CSS CDn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <!-- ., Font Awesome Cdn -->
     <script src="https://kit.fontawesome.com/0ae0890014.js" crossorigin="anonymous"></script>
 </head>
@@ -74,7 +78,7 @@
 
 
 <!-- ., Content section started -->
-<div class="content-conatiner shadow-[2px_2px_5px_gray] mx-[30px] my-[20px] bg-orange-50 px-[80px] py-[30px] border-[blue] h-fit">
+<div class="content-conatiner shadow-[2px_2px_5px_gray] mx-[30px] my-[20px] bg-orange-50 px-[10px]  xs:px-[20px] sm:px-[40px] md:px-[60px] lg:px-[80px] py-[30px] border-[blue] h-fit">
 <div class="input_section flex items-center">
   <div class="join w-full">
     <button class="join-item text-md xs:text-lg sm:text-xl md:text-2xl lg:text-3xl border-l-[1px] border-t-[1px] rounded-sm border-b-[1px]"><i class="fa-solid fa-magnifying-glass px-[20px]"></i></button>
@@ -91,14 +95,14 @@
 
   <div class="single-product-card h-[300px] xs:h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px]  xl:border-[1px] rounded-box flex flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-row mt-[100px]">
 
-    <div class="image-div h-[300px] xs:h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] w-[250px] xs:w-[250px] sm:w-[300px] md:w-[350px] lg:w-[400px] mx-auto lg:mx-auto rounded-box" style="background-image: url('./Assets/Images/852bc3af0c35e5d20e2da8fcd61bc3a9.jpg');background-size:cover;background-position: center;background-repeat: no-repeat;">
+    <div class="image-div h-[300px] xs:h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] w-[250px] xs:w-[250px] sm:w-[300px] md:w-[350px] lg:w-[400px] mx-auto lg:mx-auto rounded-box" style="background-image: url('./Assets/Images/852bc3af0c35e5d20e2da8fcd61bc3a9.jpeg');background-size:cover;background-position: center;background-repeat: no-repeat;">
         <div class="flex justify-between items-center text-white py-[200px] px-[10px] text-md xs:text-lg sm:text-xl md:text-2xl lg:text-3xl">
             <button class="hover:border-[1px] p-[1px]"><i class="fa-solid fa-chevron-left"></i></button>
             <button  class="hover:border-[1px] p-[1px]"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
     </div>
 
-    <div class="flex flex-col gap-[30px] p-[30px] w-full">
+    <div class="flex flex-col gap-[30px] p-[5px] xs:p-[10px] sm:p-[15px] md:p-[20px] lg:p-[30px] w-full ml-[-15px] xs:ml-[-10px]  sm:ml-[-5px] md:ml-0 lg:ml-0">
       <div class="flex justify-between">
         <h1 class="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-thin xs:font-light sm:font-normal md:font-semibold lg:font-bold">Rs 80,000</h1>
         <h1 class="text-md xs:text-lg sm:text-xl md:text-2xl lg:text-3xl"><i class="fa-regular active:fa-solid fa-heart"></i></h1>
@@ -106,11 +110,11 @@
 
         <h1 class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl lg:font-semibold mt-[20px]">Iphone XS</h1>
         <h1 class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-light xs:font-light sm:font-normal md:font-medium lg:font-semibold">Iphone XS MAX 64GB PTA APPROVED</h1>
-        <div class="bg-blue-600 h-[280px] sm:h-[280px] md:h-[220px] lg:h-[200px] rounded-box w-fit pl-[-30px] xs:pl-[-20px] sm:pl-[-10px] md:pl-0 lg:pl-0">
-            <div class="flex flex-col sm:flex-col md:flex-row lg:flex-row items-center w-[250px] xs:w-[300px] sm:w-[400px] md:w-[500px] lg:w-[700px] p-[10px] ">
+        <div class="bg-blue-600 h-[280px] sm:h-[280px] md:h-[220px] lg:h-[200px] rounded-box w-fit">
+            <div class="flex flex-col sm:flex-col md:flex-row lg:flex-row items-center w-[320px] xs:w-[350px] sm:w-[400px] md:w-[500px] lg:w-[700px] p-[10px]">
 
                 <div class="w-[100px] xs:[100px] sm:w-[140px] md:w-[160px] lg:w-[180px] pb-[30px]">
-                    <img src="./Assets/Images/blank-profile-picture-973460_960_720.webp" class="rounded-full">
+                    <img src="./Assets/Images/user.jpg" class="rounded-full">
             </div>
 
             <div class="ml-[20px] w-fit pb-[40px]">
@@ -173,9 +177,5 @@
 
 
 
-    <!-- ., Daisy Ui Cdn-->
-<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
-<!-- .,Tailwind CSS CDn -->
-<script src="https://cdn.tailwindcss.com"></script>
 </body>
 </html>
