@@ -21,77 +21,180 @@ const loadingGif = document.getElementById('loading-gif');
 const loadingMsg = document.getElementById('loading-msg');
 const uploadImageTag = document.getElementById('upload-image-tag');
 const uploadFileName = document.getElementById('upload-file-name');
-
-uploadImageTag.innerHTML = 'Upload Profile Photo';
-loadingMsg.style.display = 'none';
-loadingGif.style.display = 'none';
+const sound = document.getElementById('notification-sound');
+const alertSound = document.getElementById('notification-sound2')
 
 // .,Regex
 const firstNameRegex = /^[A-Z][a-zA-Z]{3,9}$/;
 const lastNameRegex = /^[A-Z][a-zA-Z]{3,9}$/;
 const passwordRegex = /^[A-Z](?=.*\d)[A-Za-z\d]{5,9}$/;
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const toast = document.querySelector('.toast-msg');
+
+// ., Elemet Display Section
+loadingGif.style.display = 'none';
+loadingMsg.style.display = 'none';
+toast.style.display = 'none';
+uploadImageTag.innerHTML = 'Upload Profile Photo';
+
+// ., Input User Photo Function
+userPhoto.addEventListener('change', () => {
+    try {
+        const userPic = userPhoto.files[0];
+        console.log(userPic);
+        uploadImageTag.innerHTML = `${userPhoto.files[0].name}`
+    } catch (er) {
+        console.log(er);
+    }
+});
+
 
 // .,Form Button Function
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-
+    // Validate form inputs
     if (firstName.value === '' || lastName.value === '' || email.value === '' || password.value === '' || userPhoto.files.length === 0) {
-        alert('Please fill all fields and upload a photo.');
+        toast.style.display = 'block';
+        toast.innerHTML = `<div class="toast toast-top toast-center mt-[20px]">
+        <div class="bg-red-500 text-white p-4 rounded-lg">
+        <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">
+        Please fill <b>all</b> fields and <b>upload a photo</b>.
+              </span>
+              </div>
+              </div>`
+              alertSound.play()
+        setTimeout(() => {
+            toast.style.display = 'none'
+        }, 2000)
         return;
     }
 
     if (!firstNameRegex.test(firstName.value)) {
-        alert("Your first name must:\n- Start with an uppercase letter\n- Be between 4 and 10 characters long\n- Only contain letters (no numbers or special characters)");
+        toast.style.display = 'block'
+        toast.innerHTML = `<div class="toast toast-top toast-center mt-[20px]">
+        <div class="bg-red-500 text-white p-4 rounded-lg">
+        <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">Your first name must: <br>
+              Start with an <b>uppercase</b> letter<br>
+              Be between <b>4 and 10 characters</b> long<br>
+              Only contain <b>letters</b> (no numbers or special characters)<br>
+              Not contain <b>sapces</b>
+              </span>
+              </div>
+              </div>`
+              alertSound.play()
+              firstName.addEventListener('click',()=>{
+                if(toast.style.display === 'block'){
+                    toast.style.display = 'none';
+                }
+            })
+        setTimeout(() => {
+            toast.style.display = 'none'
+        }, 3000)
+
         return;
     }
 
     if (!lastNameRegex.test(lastName.value)) {
-        alert("Your last name must:\n- Start with an uppercase letter\n- Be between 4 and 10 characters long\n- Only contain letters (no numbers or special characters)");
+        toast.style.display = 'block'
+        toast.innerHTML = `<div class="toast toast-top toast-center mt-[20px]">
+        <div class="bg-red-500 text-white p-4 rounded-lg">
+        <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">Your last name must: <br>
+              Start with an <b>uppercase</b> letter<br>
+              Be between <b>4 and 10 characters</b> long<br>
+              Only contain <b>letters</b> (no numbers or special characters)<br>
+              Not contain <b>sapces</b>
+              </span>
+              </div>
+              </div>`
+              alertSound.play()
+              lastName.addEventListener('click',()=>{
+                if(toast.style.display === 'block'){
+                    toast.style.display = 'none';
+                }
+            })
+        setTimeout(() => {
+            toast.style.display = 'none';
+        }, 3000)
         return;
+
     }
 
     if (!emailRegex.test(email.value)) {
-        alert("Invalid email format. Please make sure your email follows these rules:\n\n" +
-            "1. Contains no spaces.\n" +
-            "2. Contains one '@' symbol.\n" +
-            "3. Has text before and after the '@'.\n" +
-            "4. Contains a '.' after the '@' and some text after the '.'.");
+        toast.style.display = 'block'
+        toast.innerHTML = `<div class="toast toast-top toast-center mt-[20px]">
+            <div class="bg-red-500 text-white p-4 rounded-lg">
+            <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">Invalid email format. Please make sure your email follows these rules: <br>
+            "1. Contains <b>no spaces</b>."<br>
+            "2. Contains one <b>'@' symbol</b>."<br>
+            "3. Has text before and after the <b>'@'</b>."<br>
+            "4. Contains a <b>'.'</b> after the <b>'@'</b> and some text after the <b>.</b>."
+            </span>
+            </div>
+            </div>`
+            alertSound.play()
+            email.addEventListener('click',()=>{
+                if(toast.style.display === 'block'){
+                    toast.style.display = 'none';
+                }
+            })
+            setTimeout(() => {
+            toast.style.display = 'none'
+        }, 3000)
         return;
     }
 
     if (!passwordRegex.test(password.value)) {
-        alert("Your password must:\n- Start with an uppercase letter\n- Be between 6 and 10 characters long\n- Include at least one number");
+        toast.style.display = 'block';
+        toast.innerHTML = `<div class="toast toast-top toast-center mt-[20px]">
+        <div class="bg-red-500 text-white p-4 rounded-lg">
+        <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">
+            Your password must:<br>
+            1. Start with an <b>uppercase letter</b>.<br>
+            2. Be between <b>6 and 10 characters long</b>.<br>
+            3. Include at least <b>one number</b>.
+            </span>
+            </div>
+            </div>`;
+            alertSound.play()
+            password.addEventListener('click',()=>{
+                if(toast.style.display === 'block'){
+                    toast.style.display = 'none';
+                }
+            })
+            setTimeout(() => {
+                toast.style.display = 'none';
+        }, 3000)
         return;
     }
-    uploadFileName.addEventListener('click',()=>{
-        console.log('btn work')
-        console.log(userPhoto.files[0])
-        uploadImageTag.innerHTML = userPhoto.files[0].name
-        
-        
-    })
+
+    uploadFileName.addEventListener('click', () => {
+        console.log('btn work');
+        console.log(userPhoto.files[0]);
+        uploadImageTag.innerHTML = userPhoto.files[0].name;
+    });
 
     try {
+
         const userCredential = await createUserWithEmailAndPassword(auth, email.value, password.value);
+        const user = userCredential.user;
+
+
         form.style.display = 'none';
         loadingMsg.style.display = 'block';
-        loadingMsg.innerHTML = 'Registering...'
+        loadingMsg.innerHTML = 'Registering...';
         loadingGif.style.display = 'block';
-        const user = userCredential.user;
+        registerBtn.textContent = 'Registering...'
+
         const file = userPhoto.files[0];
         const storageRef = ref(storage, `userPhotos/${user.uid}/${file.name}`);
-        const uploadResult = await uploadBytes(storageRef, file);
+        await uploadBytes(storageRef, file);
         const photoURL = await getDownloadURL(storageRef);
-        console.log('Photo URL:', photoURL);
         userProfileImage.src = photoURL;
-        console.log(registerBtn.textContent);
-
-        msgRegistered.innerHTML = `${firstName.value} ${lastName.value}`;
-        registerEmailMessage.innerHTML = `<span class="font-light xs:font-normal sm:font-medium md:font-semibold lg:font-bold text-teal-600">You are registered</span> with this email <b>${email.value}</b>`;
+        localStorage.setItem('user-image-url', JSON.stringify(photoURL));
+        msgRegistered.innerHTML = `${firstName.value} ${lastName.value}`; registerEmailMessage.innerHTML = `<span class="font-light xs:font-normal sm:font-medium md:font-semibold lg:font-bold text-teal-600">You are registered</span> with this email <b>${email.value}</b>`;
         myModal.showModal();
-
+        sound.play();
         form.style.display = 'block'
         loadingGif.style.display = 'none';
         loadingMsg.style.display = 'none';
@@ -104,12 +207,9 @@ form.addEventListener('submit', async (event) => {
             firstName: firstName.value,
             lastName: lastName.value
         });
+        registerBtn.textContent = 'loading...'
 
-
-        firstName.value = '';
-        lastName.value = '';
-        email.value = '';
-        password.value = '';
+        form.reset();
         userPhoto.value = '';
         crossButton.addEventListener('click', () => {
             window.location = 'login.html';
@@ -117,7 +217,16 @@ form.addEventListener('submit', async (event) => {
 
     } catch (error) {
         console.error('Error registering user:', error.message);
-        alert(`Error: ${error.message}`);
+        toast.style.display = 'block'
+        toast.innerHTML = `<div class="toast toast-top toast-center mt-[70px]">
+<div class="bg-red-500 text-white p-4 rounded-lg">
+<span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">${error.message}</span>
+</div>
+   </div>`
+   alertSound.play()
+   setTimeout(() => {
+       toast.style.display = 'none';
+   }, 2000);
     }
 });
 
@@ -132,3 +241,5 @@ async function showUrl(file) {
         console.error('Error uploading file:', error);
     }
 }
+
+

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Ad || Buy / Sells Corner</title>
+
+    <!-- ., Font Awesome Cdn -->
+    <script src="https://kit.fontawesome.com/0ae0890014.js" crossorigin="anonymous"></script>
+</head>
+<body class="h-[120vh]">
+    <!-- ., Navbar started -->
+    <div class="navbar bg-[#4C68FF] text-white">
+      <div class="flex-1">
+        <h1 class="text-xl md:text-2xl lg:text-3xl font-semibold"><i class="fa-brands fa-sellsy"></i> Buy / Sells Corner</h1>
+      </div>
+        <div class="dropdown dropdown-end pr-[20px] text-black" id="avatar-div">
+            <div tabindex="0" role="button" class="rounded-full">
+              <div class="rounded-full">
+                <img
+                  alt="Tailwind CSS Navbar component"
+                  src="./Assets/Images/98bccd_0048dde95e7c467fa61477f72de95fdf~mv2.gif" 
+                  id="user-nav-avatar"
+                  class="h-[40px] xs:h-[40px] sm:h-[50px] md:h-[60px] lg:h-[70px] w-[40px] xs:w-[40px] sm:w-[50px] md:w-[60px] lg:w-[70px] rounded-full"
+                  />
+              </div>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-[200px] p-2 shadow">
+              <li class="hover:bg-orange-50 rounded-box">
+                <a class="rounded-box">
+                  <i class="fa-regular fa-user text-lg md:text-xl lg:text-2xl"></i>
+                  Profile
+                </a>
+              </li>
+          </div>
+
+          
+          
+
+
+      </div>
+    </div>
+  
+    <!-- ., Navbar ended -->
+
+<!-- ., Nofication and alerts sounds started -->
+<audio id="notification-sound-error" src="./Assets/Images/message-notification-103496.mp3" preload="auto"></audio>
+<!-- ., Nofication and alerts sounds ended -->
+
+
+<!-- ., Content section started -->
+<h1 class="text-center text-lg xs:text-md sm:text-xl md:text-2xl lg:text-3xl font-light xs:font-normal sm:font-medium md:font-semibold lg:font-bold mt-[50px]" id="head-post-ad">Post AD</h1>
+<div class="content-container  w-[300px] xs:w-[400px] sm:w-[600px] md:w-[750px] lg:w-[900px] mx-auto mt-[20px] mb-[50px]" id="post-ad-body">
+  <div class="bg-primary h-[120px] xs:h-[150px] sm:h-[200px] md:h-[250px] lg:h-[300px] shadow-[0px_0px_3px_gray] flex flex-col gap-[20px] items-center justify-center">
+  <button class="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl border-[2px] xs:border-[4px] sm:border-[6px] md:border-[8px]  lg:border-[10px] rounded-3xl py-[10px] w-[50px] xs:w-[60px]  sm:w-[80px] md:w-[100px] lg:w-[120px] border-[white] hover:shadow-[0px_0px_10px_black]"><i class="fa-solid fa-plus text-white hover:text-black"></i></button>
+  <h1 class="font-thin xs:font-thin sm:font-light md:font-normal lg:font-medium text-white text-md xs:text-lg sm:text-xl md:text-2xl lg:text-3xl cursor-pointer hover:text-black">Upload Product Photo</h1>
+  </div>
+  <div class="input-div flex flex-col gap-[20px] mt-[50px] mb-[20px]">
+    <input type="text" placeholder="Product Title" class="w-full border-[1px] p-[10px] text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl font-thin sm:font-light md:font-normal lg:font-medium px-[20px] border-[gray]">
+    <input type="text" placeholder="Product Description" class="w-full border-[1px] p-[10px] text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl font-thin sm:font-light md:font-normal lg:font-medium px-[20px] border-[gray]">
+    <input type="text" placeholder="Enter Price" class="w-full border-[1px] p-[10px] text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl font-thin sm:font-light md:font-normal lg:font-medium px-[20px] border-[gray]">
+  <div>
+    <input type="text" placeholder="Enter Your Name" class="w-full border-[1px] p-[15px] text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl font-thin sm:font-light md:font-normal lg:font-medium px-[20px] border-[gray]">
+    <input type="text" placeholder="Enter Your Number" class="w-full border-r-[1px] border-l-[1px] border-b-[1px] p-[15px] text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl font-thin sm:font-light md:font-normal lg:font-medium px-[20px] border-[gray]">
+  </div>
+  <div class="flex justify-end">
+    <button class="bg-primary text-white p-[5px] text-xs xs:text-xs sm:text-sm md:text-md lg:text-lg px-[15px] py-[10px] shadow-[0px_0px_3px_black] rounded-lg uppercase font-semibold hover:shadow-[2px_2px_6px_black] active:border-[2px] border-[white]">Post Now</button>
+  </div>
+  </div>
+</div>
+
+<!-- ., Content section ended -->
+
+
+<!--  Modal Started -->
+<dialog id="my_modal_3" class="modal">
+    <div class="modal-box">
+      <form method="dialog">
+        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" id="cross-button">✕</button>
+      </form>
+      <h3 class="text-sm sm:text-sm md:text-md lg:text-lg font-medium sm:font-medium md:font-semibold lg:font-bold">You are not logged in<br>
+    <b>Please Login OR Register to post your AD.</b></h3>
+    <div class="flex justify-center gap-[20px] mt-[20px]">
+
+        <a href="login.html"><button class="text-md xs:text-md sm:text-lg md:text-xl lg:text-2xl p-[5px] rounded-md bg-blue-700 text-white hover:shadow-[1px_1px_3px_black] active:border-[1px]">Login</button></a>
+        <a href="register.html"><button class="text-md xs:text-md sm:text-lg md:text-xl lg:text-2xl p-[5px] rounded-md bg-blue-700 text-white hover:shadow-[1px_1px_3px_black] active:border-[1px]">Register</button></a>
+    </div>
+      <p class="py-4" >Click on ✕ button to close</p>
+    </div>
+  </dialog>
+  <!-- Modal Ended -->
+  
+
+    <!-- ., Daisy Ui Cdn-->
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+<!-- .,Tailwind CSS CDn -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- ., JavaScript Link -->
+<script src="post-add.js" type="module"></script>
+</body>
+</html>
