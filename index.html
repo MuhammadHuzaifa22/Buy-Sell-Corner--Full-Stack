@@ -10,6 +10,7 @@
     
 </head>
 <body>
+  
   <!-- ., Navbar started -->
   <div class="navbar bg-[#4C68FF] text-white">
       <div class="flex-1">
@@ -70,6 +71,25 @@
     </div>
     
     <!-- ., Navbar ended -->
+
+<!--  Modal Started -->
+<div class="modal-container w-[500px] flex justify-center">
+  <dialog id="my_modal_3" class="modal modal-div">
+    <div class="modal-box">
+      <form method="dialog">
+        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" id="cross-button">✕</button>
+      </form>
+      <h3 class="text-sm sm:text-sm md:text-md lg:text-lg font-medium sm:font-medium md:font-semibold lg:font-bold">You are not logged in<br>
+        <b>Please re-authenticate before <span class="text-red-500">deleting your account.</span></b></h3>
+  <div class="flex justify-center gap-[20px] mt-[20px]">
+      <a href="register.html"><button class="text-md xs:text-md sm:text-lg md:text-xl lg:text-2xl p-[5px] rounded-md bg-blue-700 text-white hover:shadow-[1px_1px_3px_black] active:border-[1px]">Register</button></a>
+  </div>
+    <p class="py-4" >Click on ✕ button to close</p>
+  </div>
+</dialog>
+</div>
+<!-- Modal Ended -->
+
 
 <!-- ., Toast Started -->
 <div class="toast-msg"></div>

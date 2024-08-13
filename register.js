@@ -164,27 +164,25 @@ form.addEventListener('submit', async (event) => {
             })
             setTimeout(() => {
                 toast.style.display = 'none';
-        }, 3000)
-        return;
-    }
-
-    uploadFileName.addEventListener('click', () => {
-        console.log('btn work');
-        console.log(userPhoto.files[0]);
-        uploadImageTag.innerHTML = userPhoto.files[0].name;
-    });
-
+            }, 3000)
+            return;
+        }
+        
+        uploadFileName.addEventListener('click', () => {
+            console.log('btn work');
+            console.log(userPhoto.files[0]);
+            uploadImageTag.innerHTML = userPhoto.files[0].name;
+        });
+        
+        registerBtn.classList.add('loading', 'loading-bars', 'loading-md');
     try {
-
         const userCredential = await createUserWithEmailAndPassword(auth, email.value, password.value);
         const user = userCredential.user;
-
 
         form.style.display = 'none';
         loadingMsg.style.display = 'block';
         loadingMsg.innerHTML = 'Registering...';
         loadingGif.style.display = 'block';
-        registerBtn.textContent = 'Registering...'
 
         const file = userPhoto.files[0];
         const storageRef = ref(storage, `userPhotos/${user.uid}/${file.name}`);
@@ -199,7 +197,7 @@ form.addEventListener('submit', async (event) => {
         loadingGif.style.display = 'none';
         loadingMsg.style.display = 'none';
         loadingMsg.innerHTML = '';
-
+        registerBtn.classList.add('loading', 'loading-bars', 'loading-md');
         await setDoc(doc(db, 'users', user.uid), {
             uid: user.uid,
             email: user.email,
@@ -216,6 +214,7 @@ form.addEventListener('submit', async (event) => {
         });
 
     } catch (error) {
+        registerBtn.classList.remove('loading', 'loading-bars', 'loading-md');
         console.error('Error registering user:', error.message);
         toast.style.display = 'block'
         toast.innerHTML = `<div class="toast toast-top toast-center mt-[70px]">
@@ -238,8 +237,6 @@ async function showUrl(file) {
         const url = await getDownloadURL(storageRef);
         return url;
     } catch (error) {
-        console.error('Error uploading file:', error);
+       console.error('Error uploading file:', error);
     }
 }
-
-
