@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,7 @@
         alt="Tailwind CSS Navbar component"
         src="./Assets/Images/98bccd_0048dde95e7c467fa61477f72de95fdf~mv2.gif"
         id="user-nav-avatar"
-        class="h-[30px] sm:h-[35px] md:h-[40px] lg:h-[50px] w-[30px] sm:w-[35px] md:w-[40px] lg:w-[50px] rounded-full border-[1px]"
+        class="h-[30px] sm:h-[35px] md:h-[40px] lg:h-[50px] w-[30px] sm:w-[35px] md:w-[40px] lg:w-[50px] rounded-full"
       />
     </div>
     <ul
@@ -44,52 +44,62 @@
   </div>
 </div>
 <!-- ., Navbar ended -->
+
+
+<!-- ., Notification and alerts sounds started -->
+<audio id="notification-sound" src="./Assets/Images/mixkit-software-interface-back-2575.wav" preload="auto"></audio>
+<audio id="notification-sound2" src="./Assets/Images/mixkit-message-pop-alert-2354.mp3" preload="auto"></audio>
+<!-- ., Notification and alerts sounds ended -->
+
 <!-- Content Started -->
-<div class="content-section-started p-6 bg-white shadow-lg rounded-lg mx-auto mt-6 max-w-md">
+<div class="content-section-started p-6 bg-white shadow-lg rounded-lg mx-auto mt-6 max-w-md" id="content">
   <div class="profile-section text-center">
     <img
       src="./Assets/Images/771.gif"
       alt="Profile Picture"
       class="h-[120px] w-[120px] border-2 border-primary rounded-full mx-auto"
+      id="image-user"
     />
-    <h1 class="text-2xl font-bold text-primary mt-4">Muhammad Huzaifa</h1>
+    <h1 class="text-2xl font-bold text-primary mt-4" id="prof-name">Muhammad Huzaifa</h1>
     <div class="details-section mt-4 space-y-2">
-      <h2 class="text-lg font-semibold text-primary bg-gray-100 p-2 rounded-lg shadow-sm">
-        <i class="fa-solid fa-signature"></i> Full Name: Muhammad Huzaifa
-      </h2>
-      <h2 class="text-lg font-semibold text-primary bg-gray-100 p-2 rounded-lg shadow-sm">
+      <h2 class="text-lg font-semibold text-primary bg-gray-100 p-2 rounded-lg shadow-sm" id="prof-email">
         <i class="fa-solid fa-envelope"></i> Email: huzaifafurqan22@gmail.com
       </h2>
-      <h2 class="text-lg font-semibold text-primary bg-gray-100 p-2 rounded-lg shadow-sm">
+      <!-- <h2 class="text-lg font-semibold text-primary bg-gray-100 p-2 rounded-lg shadow-sm" id="prof-number">
         <i class="fa-solid fa-mobile"></i> Phone Number: 03212021407
-      </h2>
-    </div>
-  </div>
-  <div class="post-details mt-6 p-4 bg-orange-50 rounded-lg shadow-md">
-    <h2 class="text-lg font-semibold text-primary text-center mb-3">Your Post Details</h2>
-    <p class="text-center text-xl text-red-500 font-bold">You have not posted yet</p>
-    <div class="text-center mt-4">
-      <p class="text-md font-semibold text-primary bg-white p-2 rounded-lg shadow-sm">
-        Total Posts: 1
-      </p>
-      <p class="text-md font-semibold text-primary bg-white p-2 rounded-lg shadow-sm mt-2">
-        Your Selected Categories: Electronics
-      </p>
+      </h2> -->
     </div>
   </div>
 </div>
 <!-- Content Ended -->
 
 
+<!-- ., Modal Started -->
+<dialog id="my_modal_3" class="modal">
+  <div class="modal-box bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626]">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" id="cross-btn">✕</button>
+    </form>
+    <h3 class="text-sm sm:text-sm md:text-md lg:text-lg font-medium sm:font-medium md:font-semibold lg:font-bold">You are not logged in<br>
+      <b>Please Login OR Register to enter this page.</b>
+    </h3>
+    <div class="flex justify-center gap-4 mt-4">
+      <a href="login.html"><button class="text-sm xs:text-sm sm:text-lg md:text-xl lg:text-2xl py-2 px-4 rounded-md bg-blue-700 text-white hover:shadow-md active:border-1">Login</button></a>
+      <a href="register.html"><button class="text-sm xs:text-sm sm:text-lg md:text-xl lg:text-2xl py-2 px-4 rounded-md bg-blue-700 text-white hover:shadow-md active:border-1">Register</button></a>
+    </div>
+  </div>
+</dialog>
+<!-- Modal Ended -->
 
 
 <!-- ., Daisy Ui Cdn-->
+
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
 <!-- .,Tailwind CSS CDn -->
 <script src="https://cdn.tailwindcss.com"></script>
 
 <!-- ., JavaScript Link -->
-<script src="profile.js"></script>
+<script type="module" src="profile.js"></script>
 
 
 

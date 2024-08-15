@@ -1,181 +1,269 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Single Product || Buy / Sells Corner</title>
-    <!-- ., Daisy Ui Cdn-->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <!-- .,Tailwind CSS CDn -->
-    <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- ., Font Awesome Cdn -->
-    <script src="https://kit.fontawesome.com/0ae0890014.js" crossorigin="anonymous"></script>
-</head>
-<body>
-
+    <script
+      src="https://kit.fontawesome.com/0ae0890014.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body id="body">
     <!-- ., Navbar started -->
-    <div class="navbar bg-[#4C68FF] text-white">
-      <div class="flex-1">
-        <a class="text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl pl-[20px]  font-thin sm:font-light md:font-normal lg:font-medium">Buy / Sells Corner</a>
-      </div>
-      <div class="flex-none">
-        <div class="dropdown dropdown-end">
-          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-            <div class="indicator">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-              <span class="badge badge-sm indicator-item  text-black">8</span>
-            </div>
-          </div>
-          <div
-            tabindex="0"
-            class="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow  text-black">
-            <div class="card-body">
-              <span class="text-lg font-bold">8 Items</span>
-              <span class="text-info">Subtotal: $999</span>
-              <div class="card-actions">
-                <button class="btn btn-primary btn-block">View cart</button>
-              </div>
-            </div>
-          </div>
+    <div
+      class="navbar bg-[#4C68FF] text-white flex items-center justify-between px-4 py-2"
+    >
+      <h1 class="text-lg md:text-xl lg:text-2xl font-semibold">
+        <i class="fa-brands fa-sellsy"></i> Buy / Sells Corner
+      </h1>
+      <div class="dropdown dropdown-end pr-4" id="avatar-div">
+        <div tabindex="0" role="button" class="rounded-full">
+          <img
+          alt="Profile Avatar"
+          src="./Assets/Images/98bccd_0048dde95e7c467fa61477f72de95fdf~mv2.gif" 
+          id="user-nav-avatar"
+          class="h-8 w-8 xs:h-10 xs:w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-18 lg:w-18 rounded-full"
+        />
         </div>
-        <div class="dropdown dropdown-end pr-[20px] text-black">
-          <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-            <div class="w-6 sm:w-6 md:w-8 lg:-10 rounded-full">
-              <img
-                alt="Tailwind CSS Navbar component"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-            </div>
-          </div>
-          <ul
-            tabindex="0"
-            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-            <li>
-              <a class="justify-between">
-                Profile
-                <span class="badge">New</span>
-              </a>
-            </li>
-            <li><a>Settings</a></li>
-            <li><a>Logout</a></li>
-          </ul>
-        </div>
+        <ul
+          tabindex="0"
+          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-2 w-48 p-2 shadow-md"
+          >
+          <li class="hover:bg-orange-50 rounded-box">
+            <a class="rounded-box text-black" href="index.html">
+              <i class="fa-solid fa-house text-base md:text-lg lg:text-xl"></i>
+              Home
+            </a>
+          </li>
+          <li class="hover:bg-orange-50 rounded-box">
+            <a class="rounded-box text-black" href="profile.html">
+              <i class="fa-regular fa-user text-base md:text-lg lg:text-xl"></i>
+              Profile
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
     <!-- ., Navbar ended -->
 
+<!-- ., Notification and alerts sounds started -->
+<audio id="notification-sound" src="./Assets/Images/mixkit-software-interface-back-2575.wav" preload="auto"></audio>
+<audio id="notification-sound2" src="./Assets/Images/mixkit-message-pop-alert-2354.mp3" preload="auto"></audio>
+<!-- ., Notification and alerts sounds ended -->
 
-
-<!-- ., Content section started -->
-<div class="content-conatiner shadow-[2px_2px_5px_gray] bg-orange-50 px-[10px]  xs:px-[20px] sm:px-[40px] md:px-[60px] lg:px-[80px] py-[30px] border-[blue] h-fit">
-<div class="input_section flex items-center">
-  <div class="join w-full">
-    <button class="join-item text-md xs:text-lg sm:text-xl md:text-2xl lg:text-3xl border-l-[1px] border-t-[1px] rounded-sm border-b-[1px]"><i class="fa-solid fa-magnifying-glass px-[20px]"></i></button>
-    <input
-      type="text"
-      placeholder="Search"
-      class="w-full join-item pl-[30px] text-md xs:text-lg sm:text-xl md:text-2xl lg:text-3xl p-[5px] bg-orange-50 border-t-[1px] border-b-[1px] " />
-    <button class="join-item text-md xs:text-lg sm:text-xl md:text-2xl lg:text-3xl border-r-[1px] border-t-[1px] rounded-sm border-b-[1px]"><i class="fa-solid fa-filter join-item text-md xs:text-lg sm:text-xl md:text-2xl lg:text-3xl px-[20px]"></i></button>
-  </div>
-
-</div>
-
-<h1 class="mt-[70px] text-xl xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light xs:font-normal sm:font-medium md:font-semibold lg:font-bold">Iphone XS</h1>
-
-  <div class="single-product-card h-[300px] xs:h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px]  xl:border-[1px] rounded-box flex flex-col sm:flex-col md:flex-col  lg:flex-col xl:flex-row  mt-[100px]">
-
-    <div class="image-div h-[300px] xs:h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] w-[250px] xs:w-[250px] sm:w-[300px] md:w-[350px] lg:w-[400px] mx-auto lg:mx-auto rounded-box" style="background-image: url('./Assets/Images/852bc3af0c35e5d20e2da8fcd61bc3a9.jpeg');background-size:cover;background-position: center;background-repeat: no-repeat;">
-        <div class="flex justify-between items-center text-white py-[200px] px-[10px] text-md xs:text-lg sm:text-xl md:text-2xl lg:text-3xl">
-            <button class="hover:border-[1px] p-[1px]"><i class="fa-solid fa-chevron-left"></i></button>
-            <button  class="hover:border-[1px] p-[1px]"><i class="fa-solid fa-chevron-right"></i></button>
+    <!-- ., Content section started -->
+    <div
+      class="content-conatiner shadow-[2px_2px_5px_gray] bg-orange-50 px-[8px] xs:px-[16px] sm:px-[24px] md:px-[32px] lg:px-[40px] py-[20px] border-[blue] h-fit"
+      id="content"
+    >
+      <!-- <div class="input_section flex items-center">
+        <div class="join w-full">
+          <button
+            class="join-item text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl border-l-[1px] border-t-[1px] rounded-sm border-b-[1px]"
+          >
+            <i class="fa-solid fa-magnifying-glass px-[16px]"></i>
+          </button>
+          <input
+            type="text"
+            placeholder="Search"
+            class="w-full join-item pl-[20px] text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl p-[4px] bg-orange-50 border-t-[1px] border-b-[1px]"
+          />
+          <button
+            class="join-item text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl border-r-[1px] border-t-[1px] rounded-sm border-b-[1px]"
+            >
+            <i class="fa-solid fa-filter px-[16px]"></i>
+          </button>
         </div>
-    </div>
+      </div> -->
 
-    <div class="flex flex-col gap-[30px] p-[5px] xs:p-[10px] sm:p-[15px] md:p-[20px] lg:p-[30px] w-full mt-[20px] lg:mt-[20px] xl:mt-0">
-      <div class="flex justify-between">
-        <h1 class="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-thin xs:font-light sm:font-normal md:font-semibold lg:font-bold">Rs 80,000</h1>
-        <h1 class="text-md xs:text-lg sm:text-xl md:text-2xl lg:text-3xl"><i class="fa-regular active:fa-solid fa-heart"></i></h1>
+      <h1
+      class="mt-[50px] text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light xs:font-normal sm:font-medium md:font-semibold lg:font-bold"
+      id="head-tag"
+      >
+        Iphone XS
+      </h1>
+
+      <div
+        class="single-product-card h-[250px] xs:h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:border-[1px] rounded-box flex flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-row mt-[60px]"
+      >
+        <div
+        id="imageDiv"
+          class="image-div h-[250px] xs:h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] w-[200px] xs:w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] mx-auto lg:mx-auto rounded-box"
+          style="
+            background-image: url('./Assets/Images/loading-gif.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+          "
+        >
+          <div
+            class="flex justify-between items-center text-white py-[150px] px-[8px] text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl"
+          >
+            <button class="hover:border-[1px] p-[1px]">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="hover:border-[1px] p-[1px]">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col gap-[20px] p-[4px] xs:p-[8px] sm:p-[12px] md:p-[16px] lg:p-[20px] w-full mt-[10px] lg:mt-[10px] xl:mt-0">
+          <div class="flex justify-between">
+            <h1
+              class="text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl font-thin xs:font-light sm:font-normal md:font-semibold lg:font-bold"
+              id="price-tag"
+            >
+              Rs 80,000
+            </h1>
+            <h1 class="text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">
+              <i class="fa-regular active:fa-solid fa-heart"></i>
+            </h1>
+          </div>
+
+          <h1
+            class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl lg:font-semibold mt-[10px]" id="head-tag-title"
+          >
+            Iphone XS
+          </h1>
+          <h1
+            class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-light xs:font-light sm:font-normal md:font-medium lg:font-semibold"
+            id="description-head"
+            >
+            Iphone XS MAX 64GB PTA APPROVED
+          </h1>
+          <div
+            class="bg-blue-600 h-[220px] sm:h-[220px] md:h-[180px] lg:h-[160px] rounded-box w-fit mx-auto sm:mx-auto md:mx-0 lg:mx-0"
+          >
+            <div
+              class="flex flex-col sm:flex-col md:flex-row lg:flex-row items-center w-[240px] xs:w-[260px] sm:w-[320px] md:w-[480px] lg:w-[640px] p-[8px]"
+            >
+              <div
+                class="w-[80px] xs:w-[80px] sm:w-[120px] md:w-[140px] lg:w-[160px] pb-[20px]"
+              >
+                <img src="./Assets/Images/loading-gif.gif" class="rounded-full border-[1px] border-white w-[40px] xs:w-[40px] sm:w-[60px] md:w-[80px] lg:w-[100px]" id="seller-pic"/>
+              </div>
+              <div class="ml-[16px] w-fit pb-[30px]">
+                <div
+                  class="flex justify-between text-white text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-light xs:font-light sm:font-normal md:font-medium lg:font-semibold"
+                >
+                <h1 id="seller-name-tag">M Ali</h1>
+                <h1>See Profile <i class="fa-solid fa-chevron-right"></i></h1>
+              </div>
+                <div
+                  class="cal-now-section flex gap-[8px] sm:gap-[8px] md:gap-[16px] lg:gap-[24px] p-[2px] xs:p-[2px] sm:p-[4px] md:p-[6px] lg:p-[8px] mt-[6px] xs:mt-[6px] sm:mt-[8px] md:mt-[16px] lg:mt-[24px] flex-col xs:flex-col sm:flex-row md:flex-row lg:flex-row"
+                >
+                  <h1
+                    class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-light xs:font-light sm:font-normal md:font-medium lg:font-semibold p-[8px] text-white w-fit rounded-xl bg-slate-800 text-slate-100 px-[24px] shadow-[0px_0px_2px_black] cursor-pointer hover:shadow-[2px_3px_5px_black]"
+                  >
+                    <i class="fa-solid fa-phone pr-[4px]"></i> Call Now
+                  </h1>
+                  <h1
+                    class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-light xs:font-light sm:font-normal md:font-medium lg:font-semibold p-[8px] bg-gray-100 text-black w-fit rounded-xl px-[24px] shadow-[0px_0px_2px_white] cursor-pointer hover:shadow-[2px_3px_5px_white]"
+                  >
+                    <i class="fa-regular fa-comment pr-[4px]"></i> Chat
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+          class="flex justify-between mt-[-px] sm:mt-[-px] md:mt-[-10px] lg:mt-[-12px] items-center"
+          >
+          <h1
+              class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-medium text-white bg-primary w-fit rounded-xl px-[4px] xs:px-[6px] sm:px-[8px] md:px-[12px] lg:px-[16px] py-[2px] xs:py-[4px] sm:py-[6px] md:py-[8px] lg:py-[10px] shadow-[0px_0px_2px_black] cursor-pointer hover:shadow-[3px_3px_4px_black]"
+            >
+              Add To Cart
+            </h1>
+            <h1
+              class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-light xs:font-light sm:font-normal md:font-medium lg:font-semibold" id="area-tag"
+            >
+              <i class="fa-solid fa-location-dot"></i> Fb Area Karachi
+            </h1>
+          </div>
+        </div>
       </div>
 
-        <h1 class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl lg:font-semibold mt-[20px]">Iphone XS</h1>
-        <h1 class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-light xs:font-light sm:font-normal md:font-medium lg:font-semibold">Iphone XS MAX 64GB PTA APPROVED</h1>
-        <div class="bg-blue-600 h-[280px] sm:h-[280px] md:h-[220px] lg:h-[200px] rounded-box w-fit mx-auto sm:mx-auto md:mx-0 lg:mx-0">
-            <div class="flex flex-col sm:flex-col md:flex-row lg:flex-row items-center w-[270px] xs:w-[300px] sm:w-[400px] md:w-[600px] lg:w-[800px] p-[10px]">
-
-                <div class="w-[100px] xs:[100px] sm:w-[140px] md:w-[160px] lg:w-[180px] pb-[30px]">
-                    <img src="./Assets/Images/user.jpg" class="rounded-full">
-            </div>
-
-            <div class="ml-[20px] w-fit pb-[40px]">
-                <div class="flex justify-between text-white text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-light xs:font-light sm:font-normal md:font-medium lg:font-semibold">
-                    <h1>M Ali</h1>
-                    <h1>See Profile <i class="fa-solid fa-chevron-right"></i></h1>
-                </div>
-                <h1 class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-medium text-white mt-[10px]">Member since June 2024</h1>
-                <div class="cal-now-section flex gap-[10px] sm:gap-[10px] md:gap-[20px] lg:gap-[30px] p-[3px] xs:p-[3px] sm:p-[5px] md:p-[7px] lg:p-[10px] mt-[8px] xs:mt-[8px] sm:mt-[10px] md:mt-[20px] lg:mt-[30px] flex-col xs:flex-col sm:flex-row md:flex-row  lg:flex-row">
-                  <h1 class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-light xs:font-light sm:font-normal md:font-medium lg:font-semibold p-[10px] text-white w-fit rounded-xl bg-slate-800 text-slate-100 px-[30px] shadow-[0px_0px_3px_black] cursor-pointer hover:shadow-[2px_3px_5px_black]"><i class="fa-solid fa-phone pr-[5px]"></i> Call Now</h1>
-                  <h1 class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-light xs:font-light sm:font-normal md:font-medium lg:font-semibold p-[10px] bg-gray-100 text-black w-fit rounded-xl px-[30px] shadow-[0px_0px_3px_white] cursor-pointer hover:shadow-[2px_3px_5px_white]"><i class="fa-regular fa-comment pr-[5px] "></i> Chat</h1>
-                </div>
-                
-              </div>
-              
-            </div>
-
+      <div
+        class="border-[1px] w-[280px] xs:w-[360px] sm:w-[400px] md:w-[580px] lg:w-[750px] xl:w-full mt-[400px] sm:mt-[400px] md:mt-[350px] lg:mt-[350px] xl:mt-[40px] p-[4px] xs:p-[6px] sm:p-[8px] md:p-[12px] lg:p-[16px] rounded-xl"
+      >
+        <div class="flex">
+          <h1
+            class="text-md sm:text-lg md:text-xl lg:text-2xl font-medium md:font-medium lg:font-semibold"
+          >
+            Details
+          </h1>
+        </div>
+        <div
+          class="flex gap-[16px] mt-[16px] text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-thin xs:font-light sm:font-normal md:font-medium lg:font-semibold flex-wrap"
+        >
+          <h1>Is Deliverable</h1>
+          <h1 class="font-medium sm:font-medium md:font-semibold lg:font-bold">
+            No
+          </h1>
+          <h1>Brand</h1>
+          <h1 class="font-medium sm:font-medium md:font-semibold lg:font-bold">
+            NA
+          </h1>
+          <h1>Price</h1>
+          <h1 class="font-medium sm:font-medium md:font-semibold lg:font-bold" id="price-tag-detail">
             
+          </h1>
+          <h1>Condition</h1>
+          <h1 class="font-medium sm:font-medium md:font-semibold lg:font-bold">
+            NA
+          </h1>
+        </div>
+      </div>
+
+      <div
+      class="border-[1px] w-[280px] xs:w-[360px] sm:w-[400px] md:w-[580px] lg:w-[750px] xl:w-full mt-[40px] p-[4px] xs:p-[6px] sm:p-[8px] md:p-[12px] lg:p-[16px] rounded-xl"
+      >
+      <div class="flex">
+          <h1
+            class="text-md sm:text-lg md:text-xl lg:text-2xl font-medium md:font-medium lg:font-semibold"            
+          >
+            Description
+          </h1>
+        </div>
+        <h1
+          class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-thin sm:font-light md:font-normal lg:font-medium mt-[8px]"
+          id="description-head-detail"
+          >
+          Iphone XS MAX 64GB PTA APPROVED
+        </h1>
+      </div>
     </div>
-    <div class="flex justify-between mt-[-5px] sm:mt-[-10px] md:mt-[-15px] lg:mt-[-20px] items-center">
-      <h1 class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-medium text-white bg-primary w-fit rounded-xl px-[6px] xs:px-[8px] sm:px-[10px]  md:px-[20px] lg:px-[30px] py-[2px] xs:py-[4px] sm:py-[6px] md:py-[8px] lg:py-[10px] shadow-[0px_0px_4px_black] cursor-pointer hover:shadow-[3px_3px_6px_black]">Add To Cart</h1>
-      <h1 class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-light xs:font-light sm:font-normal md:font-medium lg:font-semibold"><i class="fa-solid fa-location-dot"></i> Fb Area Karachi</h1>
-   </div>
-</div>
+    <!-- ., Content section ended -->
+
+<!-- ., Modal Started -->
+<dialog id="my_modal_3" class="modal">
+  <div class="modal-box bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626]">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" id="cross-button">✕</button>
+    </form>
+    <h3 class="text-sm sm:text-sm md:text-md lg:text-lg font-medium sm:font-medium md:font-semibold lg:font-bold">You are not logged in<br>
+      <b>Please Login OR Register to enter this page.</b>
+    </h3>
+    <div class="flex justify-center gap-4 mt-4">
+      <a href="login.html"><button class="text-sm xs:text-sm sm:text-lg md:text-xl lg:text-2xl py-2 px-4 rounded-md bg-blue-700 text-white hover:shadow-md active:border-1">Login</button></a>
+      <a href="register.html"><button class="text-sm xs:text-sm sm:text-lg md:text-xl lg:text-2xl py-2 px-4 rounded-md bg-blue-700 text-white hover:shadow-md active:border-1">Register</button></a>
+    </div>
   </div>
+</dialog>
+<!-- Modal Ended -->
+
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+<!-- .,Tailwind CSS CDn -->
+<script src="https://cdn.tailwindcss.com"></script>
 
 
-<div class="border-[1px] w-[300px] xs:w-[400px] sm:w-[440px] md:w-[630px] lg:w-[850px] xl:w-full mt-[550px] sm:mt-[550px] md:mt-[500px] lg:mt-[500px] xl:mt-[50px] p-[6px] xs:p-[8px] sm:p-[10px] md:p-[15px] lg:p-[20px] rounded-xl">
-  <div class="flex">
-    <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium md:font-medium lg:font-semibold">Details</h1>
-  </div>
+<!-- JavaScript Link -->
+<script src="single-product-js.js" type="module"></script>
 
-  <div class="flex gap-[20px] mt-[20px] text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-thin xs:font-light sm:font-normal  md:font-medium lg:font-semibold flex-wrap">
-    <h1>Is Deleiverable</h1>
-    <h1 class="font-medium sm:font-medium md:font-semibold lg:font-bold">No</h1>
-    <h1>Brand</h1>
-    <h1 class="font-medium sm:font-medium md:font-semibold lg:font-bold">Apple</h1>
-    <h1>Price</h1>
-    <h1 class="font-medium sm:font-medium md:font-semibold lg:font-bold">80,000</h1>
-    <h1>Condition</h1>
-    <h1 class="font-medium sm:font-medium md:font-semibold lg:font-bold">Used</h1>
-  </div>
-</div>
-  
-
-
-<div class="border-[1px] w-[300px] xs:w-[400px] sm:w-[440px] md:w-[630px] lg:w-[850px] xl:w-full mt-[50px] p-[6px] xs:p-[8px] sm:p-[10px] md:p-[15px] lg:p-[20px] rounded-xl">
-  <div class="flex">
-    <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium md:font-medium lg:font-semibold">Description</h1>
-  </div>
-  <h1 class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-thin sm:font-light md:font-normal lg:font-medium mt-[10px]">Iphone XS MAX 64GB PTA APPROVED</h1>
-</div>
-
-
-</div>
-<!-- ., Content section ended -->
-
-
-
-
-
-
-</body>
+  </body>
 </html>

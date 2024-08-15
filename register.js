@@ -4,7 +4,8 @@ import { getDownloadURL, uploadBytes, ref } from "https://www.gstatic.com/fireba
 
 import { auth, db, storage } from './config.js';
 
-// Call Variables
+// Declare Variables
+const userAddress = document.getElementById('address');
 const form = document.querySelector('form');
 const firstName = document.getElementById('firstname');
 const lastName = document.getElementById('lastname');
@@ -23,6 +24,8 @@ const uploadImageTag = document.getElementById('upload-image-tag');
 const uploadFileName = document.getElementById('upload-file-name');
 const sound = document.getElementById('notification-sound');
 const alertSound = document.getElementById('notification-sound2')
+const userAddressRegex = /^[\w\s,-]{8,25}$/;
+
 
 // .,Regex
 const firstNameRegex = /^[A-Z][a-zA-Z]{3,9}$/;
@@ -54,7 +57,7 @@ form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     // Validate form inputs
-    if (firstName.value === '' || lastName.value === '' || email.value === '' || password.value === '' || userPhoto.files.length === 0) {
+    if (userAddress.value === '' || userAddress.value === null || firstName.value === '' || lastName.value === '' || email.value === '' || password.value === '' || userPhoto.files.length === 0) {
         toast.style.display = 'block';
         toast.innerHTML = `<div class="toast toast-top toast-center mt-[20px]">
         <div class="bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626] p-[10px] rounded-lg text-white">
@@ -63,7 +66,31 @@ form.addEventListener('submit', async (event) => {
               </span>
               </div>
               </div>`
-              alertSound.play()
+        alertSound.play()
+        setTimeout(() => {
+            toast.style.display = 'none'
+        }, 3000)
+        return;
+    }
+
+    if (!userAddressRegex.test(userAddress.value)) {
+        toast.style.display = 'block';
+        toast.innerHTML = `<div class="toast toast-top toast-center mt-[20px]">
+          <div class="bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626] p-[10px] rounded-lg text-white">
+           <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">
+            Your address should meet the following rules:<br>
+            1. Minimum length: <b>8 characters</b><br>
+            2. Maximum length: <b>25 characters</b><br>
+            3. Can include <b>letters, numbers, spaces, commas, and hyphens</b>
+        </span>
+    </div>
+</div>`;
+        alertSound.play()
+        firstName.addEventListener('click', () => {
+            if (toast.style.display === 'block') {
+                toast.style.display = 'none';
+            }
+        })
         setTimeout(() => {
             toast.style.display = 'none'
         }, 3000)
@@ -82,12 +109,12 @@ form.addEventListener('submit', async (event) => {
               </span>
               </div>
               </div>`
-              alertSound.play()
-              firstName.addEventListener('click',()=>{
-                if(toast.style.display === 'block'){
-                    toast.style.display = 'none';
-                }
-            })
+        alertSound.play()
+        firstName.addEventListener('click', () => {
+            if (toast.style.display === 'block') {
+                toast.style.display = 'none';
+            }
+        })
         setTimeout(() => {
             toast.style.display = 'none'
         }, 3000)
@@ -107,12 +134,12 @@ form.addEventListener('submit', async (event) => {
               </span>
               </div>
               </div>`
-              alertSound.play()
-              lastName.addEventListener('click',()=>{
-                if(toast.style.display === 'block'){
-                    toast.style.display = 'none';
-                }
-            })
+        alertSound.play()
+        lastName.addEventListener('click', () => {
+            if (toast.style.display === 'block') {
+                toast.style.display = 'none';
+            }
+        })
         setTimeout(() => {
             toast.style.display = 'none';
         }, 3000)
@@ -132,13 +159,13 @@ form.addEventListener('submit', async (event) => {
             </span>
             </div>
             </div>`
-            alertSound.play()
-            email.addEventListener('click',()=>{
-                if(toast.style.display === 'block'){
-                    toast.style.display = 'none';
-                }
-            })
-            setTimeout(() => {
+        alertSound.play()
+        email.addEventListener('click', () => {
+            if (toast.style.display === 'block') {
+                toast.style.display = 'none';
+            }
+        })
+        setTimeout(() => {
             toast.style.display = 'none'
         }, 3000)
         return;
@@ -156,25 +183,25 @@ form.addEventListener('submit', async (event) => {
             </span>
             </div>
             </div>`;
-            alertSound.play()
-            password.addEventListener('click',()=>{
-                if(toast.style.display === 'block'){
-                    toast.style.display = 'none';
-                }
-            })
-            setTimeout(() => {
+        alertSound.play()
+        password.addEventListener('click', () => {
+            if (toast.style.display === 'block') {
                 toast.style.display = 'none';
-            }, 3000)
-            return;
-        }
-        
-        uploadFileName.addEventListener('click', () => {
-            console.log('btn work');
-            console.log(userPhoto.files[0]);
-            uploadImageTag.innerHTML = userPhoto.files[0].name;
-        });
-        
-        registerBtn.classList.add('loading', 'loading-bars', 'loading-md');
+            }
+        })
+        setTimeout(() => {
+            toast.style.display = 'none';
+        }, 3000)
+        return;
+    }
+
+    uploadFileName.addEventListener('click', () => {
+        console.log('btn work');
+        console.log(userPhoto.files[0]);
+        uploadImageTag.innerHTML = userPhoto.files[0].name;
+    });
+
+    registerBtn.classList.add('loading', 'loading-bars', 'loading-md');
     try {
         const userCredential = await createUserWithEmailAndPassword(auth, email.value, password.value);
         const user = userCredential.user;
@@ -192,23 +219,35 @@ form.addEventListener('submit', async (event) => {
         localStorage.setItem('user-image-url', JSON.stringify(photoURL));
         msgRegistered.innerHTML = `${firstName.value} ${lastName.value}`; registerEmailMessage.innerHTML = `<span class="font-light xs:font-normal sm:font-medium md:font-semibold lg:font-bold">You are registered</span> with this email <b>${email.value}</b>`;
         myModal.showModal();
-        sound.play();
-        form.style.display = 'block'
-        loadingGif.style.display = 'none';
-        loadingMsg.style.display = 'none';
-        loadingMsg.innerHTML = '';
-        registerBtn.classList.add('loading', 'loading-bars', 'loading-md');
+        const myModalFunc = myModal.showModal();
+        if(myModalFunc){
+            sound.play();
+        }
+        const soundPlayFunc = sound.play();
+        if(soundPlayFunc){
+            form.style.display = 'block'
+            loadingGif.style.display = 'none';
+            loadingMsg.style.display = 'none';
+            loadingMsg.innerHTML = '';
+            registerBtn.classList.remove('loading', 'loading-bars', 'loading-md');
+        }
+        localStorage.setItem('user-address',JSON.stringify(userAddress.value));
+        localStorage.setItem('user-prof-email',JSON.stringify(email.value));
+        localStorage.setItem('user-prof-name',JSON.stringify(firstName.value));
+
         await setDoc(doc(db, 'users', user.uid), {
+            userAddress: userAddress.value,
             uid: user.uid,
             email: user.email,
             userPhoto: photoURL,
             firstName: firstName.value,
-            lastName: lastName.value
+            lastName: lastName.value,
         });
-        registerBtn.textContent = 'loading...'
-
-        form.reset();
-        userPhoto.value = '';
+        userAddress.value = '';
+        firstName.value = '';
+        lastName.value = '';
+        email.value = '';
+        password.value = '';
         crossButton.addEventListener('click', () => {
             window.location = 'login.html';
         });
@@ -222,10 +261,10 @@ form.addEventListener('submit', async (event) => {
 <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">${error.message}</span>
 </div>
    </div>`
-   alertSound.play()
-   setTimeout(() => {
-       toast.style.display = 'none';
-   }, 3000);
+        alertSound.play()
+        setTimeout(() => {
+            toast.style.display = 'none';
+        }, 3000);
     }
 });
 
@@ -237,6 +276,6 @@ async function showUrl(file) {
         const url = await getDownloadURL(storageRef);
         return url;
     } catch (error) {
-       console.error('Error uploading file:', error);
+        console.error('Error uploading file:', error);
     }
 }
