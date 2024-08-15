@@ -57,7 +57,7 @@ form.addEventListener('submit', async (event) => {
     if (firstName.value === '' || lastName.value === '' || email.value === '' || password.value === '' || userPhoto.files.length === 0) {
         toast.style.display = 'block';
         toast.innerHTML = `<div class="toast toast-top toast-center mt-[20px]">
-        <div class="bg-red-500 text-white p-4 rounded-lg">
+        <div class="bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626] p-[10px] rounded-lg text-white">
         <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">
         Please fill <b>all</b> fields and <b>upload a photo</b>.
               </span>
@@ -66,14 +66,14 @@ form.addEventListener('submit', async (event) => {
               alertSound.play()
         setTimeout(() => {
             toast.style.display = 'none'
-        }, 2000)
+        }, 3000)
         return;
     }
 
     if (!firstNameRegex.test(firstName.value)) {
         toast.style.display = 'block'
         toast.innerHTML = `<div class="toast toast-top toast-center mt-[20px]">
-        <div class="bg-red-500 text-white p-4 rounded-lg">
+        <div class="bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626] p-[10px] rounded-lg text-white">
         <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">Your first name must: <br>
               Start with an <b>uppercase</b> letter<br>
               Be between <b>4 and 10 characters</b> long<br>
@@ -98,7 +98,7 @@ form.addEventListener('submit', async (event) => {
     if (!lastNameRegex.test(lastName.value)) {
         toast.style.display = 'block'
         toast.innerHTML = `<div class="toast toast-top toast-center mt-[20px]">
-        <div class="bg-red-500 text-white p-4 rounded-lg">
+        <div class="bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626] p-[10px] rounded-lg text-white">
         <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">Your last name must: <br>
               Start with an <b>uppercase</b> letter<br>
               Be between <b>4 and 10 characters</b> long<br>
@@ -123,7 +123,7 @@ form.addEventListener('submit', async (event) => {
     if (!emailRegex.test(email.value)) {
         toast.style.display = 'block'
         toast.innerHTML = `<div class="toast toast-top toast-center mt-[20px]">
-            <div class="bg-red-500 text-white p-4 rounded-lg">
+            <div class="bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626] p-[10px] rounded-lg text-white">
             <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">Invalid email format. Please make sure your email follows these rules: <br>
             "1. Contains <b>no spaces</b>."<br>
             "2. Contains one <b>'@' symbol</b>."<br>
@@ -147,7 +147,7 @@ form.addEventListener('submit', async (event) => {
     if (!passwordRegex.test(password.value)) {
         toast.style.display = 'block';
         toast.innerHTML = `<div class="toast toast-top toast-center mt-[20px]">
-        <div class="bg-red-500 text-white p-4 rounded-lg">
+        <div class="bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626] p-[10px] rounded-lg text-white">
         <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">
             Your password must:<br>
             1. Start with an <b>uppercase letter</b>.<br>
@@ -190,7 +190,7 @@ form.addEventListener('submit', async (event) => {
         const photoURL = await getDownloadURL(storageRef);
         userProfileImage.src = photoURL;
         localStorage.setItem('user-image-url', JSON.stringify(photoURL));
-        msgRegistered.innerHTML = `${firstName.value} ${lastName.value}`; registerEmailMessage.innerHTML = `<span class="font-light xs:font-normal sm:font-medium md:font-semibold lg:font-bold text-teal-600">You are registered</span> with this email <b>${email.value}</b>`;
+        msgRegistered.innerHTML = `${firstName.value} ${lastName.value}`; registerEmailMessage.innerHTML = `<span class="font-light xs:font-normal sm:font-medium md:font-semibold lg:font-bold">You are registered</span> with this email <b>${email.value}</b>`;
         myModal.showModal();
         sound.play();
         form.style.display = 'block'
@@ -218,14 +218,14 @@ form.addEventListener('submit', async (event) => {
         console.error('Error registering user:', error.message);
         toast.style.display = 'block'
         toast.innerHTML = `<div class="toast toast-top toast-center mt-[70px]">
-<div class="bg-red-500 text-white p-4 rounded-lg">
+<div class="bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626] p-[10px] rounded-lg text-white">
 <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">${error.message}</span>
 </div>
    </div>`
    alertSound.play()
    setTimeout(() => {
        toast.style.display = 'none';
-   }, 2000);
+   }, 3000);
     }
 });
 

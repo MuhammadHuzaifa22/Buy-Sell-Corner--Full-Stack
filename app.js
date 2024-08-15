@@ -32,62 +32,62 @@ form.addEventListener('submit',(event) => {
     if ((email.value === '' || email.value === null) && (password.value === '' || password.value === null)) {
         toast.style.display = 'block'
         toast.innerHTML = `<div class="toast toast-top toast-center mt-[70px]">
-<div class="bg-red-500 text-white  p-4 rounded-lg">
+<div class="bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626] p-[10px] rounded-lg text-white">
 <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">Please fill <b>Input</b> field</span>
 </div>
    </div>`
    alertSound.play()
    setTimeout(() => {
     toast.style.display = 'none';
-}, 1000)
+}, 3000)
         return
     } else if ((email.value !== '' || email.value !== null) && (password.value === '' || password.value === null)) {
         toast.style.display = 'block'
         toast.innerHTML = `<div class="toast toast-top toast-center mt-[70px]">
-<div class="bg-red-500 text-white  p-4 rounded-lg">
+<div class="bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626] p-[10px] rounded-lg text-white">
 <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">Please fill <b>Password</b> field</span>
 </div>
    </div>`
    alertSound.play()
    setTimeout(() => {
     toast.style.display = 'none';
-}, 1000)
+}, 3000)
         return
     } else if ((email.value === '' || email.value === null) && (password.value !== '' || password.value !== null)) {
         toast.style.display = 'block'
         toast.innerHTML = `<div class="toast toast-top toast-center mt-[70px]">
-<div class="bg-red-500 text-white  p-4 rounded-lg">
+<div class="bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626] p-[10px] rounded-lg text-white">
 <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">Please fill <b> Email</b> field</span>
 </div>
    </div>`
    alertSound.play()
    setTimeout(() => {
     toast.style.display = 'none';
-}, 1000)
+}, 3000)
         return
     } else if (email.value === '' || email.value === null) {
         toast.style.display = 'block'
         toast.innerHTML = `<div class="toast toast-top toast-center mt-[70px]">
-<div class="bg-red-500 text-white  p-4 rounded-lg">
+<div class="bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626] p-[10px] rounded-lg text-white">
 <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">Please fill <b>Email</b> field</span>
 </div>
    </div>`
    alertSound.play()
    setTimeout(() => {
     toast.style.display = 'none';
-}, 1000)
+}, 3000)
         return
     } else if (password.value === '' || password.value === null) {
         toast.style.display = 'block'
         toast.innerHTML = `<div class="toast toast-top toast-center mt-[70px]">
-<div class="bg-red-500 text-white  p-4 rounded-lg">
+<div class="bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626] p-[10px] rounded-lg text-white">
 <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">Please fill <b>Password</b> field</span>
 </div>
    </div>`
    alertSound.play()
    setTimeout(() => {
     toast.style.display = 'none';
-}, 1000)
+}, 3000)
         return
     }
 
@@ -100,7 +100,7 @@ form.addEventListener('submit',(event) => {
             loginBtn.classList.add('loading', 'loading-spinner', 'text-error');
             toast.style.display = 'block'
             toast.innerHTML = `<div class="toast toast-top toast-center mt-[70px]">
-            <div class="alert alert-success">
+            <div class="bg-gradient-to-r from-[#14b8a6] via-[#059669] to-[#047857] p-[10px] rounded-lg">
             <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">Log in Successfull</span>
             </div>
             </div>`
@@ -108,7 +108,8 @@ form.addEventListener('submit',(event) => {
             setTimeout(() => {
                 toast.style.display = 'none';
                 window.location = 'index.html'
-            }, 900);
+            }, 1000);
+        localStorage.setItem('user-email',JSON.stringify(email.value));
         form.reset();
     }else{
         uploadFileName.style.display = 'block';
@@ -120,35 +121,38 @@ form.addEventListener('submit',(event) => {
         console.log(userPic.files[0])
         toast.style.display = 'block';
         toast.innerHTML = `<div class="toast toast-top toast-center mt-[70px]">
-        <div class="bg-red-500 text-white p-4 rounded-lg">
+        <div class="bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626] p-[10px] rounded-lg text-white">
         <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">Your <b>profile photo</b> is not set.<br>
         Please <b>upload profile picture</b> to <b>continue</b>.</span>
         </div>
         </div>`
-        alertSound.play()
+        alertSound.play();
+        if(!localStorage.setItem('user-email',JSON.stringify(email.value))){
+            localStorage.setItem('user-email',JSON.stringify(email.value));
+        }
         setTimeout(() => {
             toast.style.display = 'none';
-        }, 2000);   
+        }, 3000); 
     }
     })
 
         .catch((error) => {
-            const errorCode = error.code;
             const errorMessage = error.message;
             toast.style.display = 'block'
             toast.innerHTML = `<div class="toast toast-top toast-center mt-[70px]">
-            <div class="bg-red-500 text-white p-4 rounded-lg">
+            <div class="bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626] p-[10px] rounded-lg text-white">
             <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">${errorMessage}</span>
             </div>
             </div>`
             alertSound.play()
             setTimeout(() => {
                 toast.style.display = 'none';
-            }, 2000);
+            }, 3000);
         });
    
     })
 
+    
 // ., On auth state change
 onAuthStateChanged(auth,async (user) => {
     if (user) {
@@ -171,7 +175,7 @@ async function getURL(file){
     localStorage.setItem('user-image-url',JSON.stringify(photoURL));
     toast.style.display = 'block'
     toast.innerHTML = `<div class="toast toast-top toast-center mt-[70px]">
-    <div class="alert alert-success">
+    <div class="bg-gradient-to-r from-[#14b8a6] via-[#059669] to-[#047857] p-[10px] rounded-lg text-white">
     <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">Log in Successfull</span>
     </div>
     </div>`
@@ -180,5 +184,5 @@ async function getURL(file){
 setTimeout(() => {
     toast.style.display = 'none';
     window.location = 'index.html'
-}, 900);
+}, 1000);
 }

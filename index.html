@@ -9,80 +9,98 @@
     <script src="https://kit.fontawesome.com/0ae0890014.js" crossorigin="anonymous"></script>
     
 </head>
-<body>
+<body class="bg-orange-50 h-screen">
   
   <!-- ., Navbar started -->
-  <div class="navbar bg-[#4C68FF] text-white">
-      <div class="flex-1">
-        <h1 class="text-xl md:text-2xl lg:text-3xl font-semibold"><i class="fa-brands fa-sellsy"></i> Buy / Sells Corner</h1>
-      </div>
+<div class="navbar bg-[#4C68FF] text-white">
+  <div class="flex-1">
+    <h1 class="text-lg md:text-xl lg:text-2xl font-semibold"><i class="fa-brands fa-sellsy"></i> Buy / Sells Corner</h1>
+  </div>
 
-        <div class="dropdown dropdown-end pr-[20px] text-black" id="avatar-div">
-            <div tabindex="0" role="button" class="rounded-full">
-              <div class="rounded-full">
-                <img
-                  alt="Tailwind CSS Navbar component"
-                  src="./Assets/Images/98bccd_0048dde95e7c467fa61477f72de95fdf~mv2.gif" 
-                  id="user-nav-avatar"
-                  class="h-[40px] xs:h-[40px] sm:h-[50px] md:h-[60px] lg:h-[70px] w-[40px] xs:w-[40px] sm:w-[50px] md:w-[60px] lg:w-[70px] rounded-full"
-                  />
-              </div>
-            </div>
-            <ul
-              tabindex="0"
-              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-[200px] p-2 shadow">
-              <li class="hover:bg-orange-50 rounded-box">
-                <a class="rounded-box">
-                  <i class="fa-regular fa-user text-lg md:text-xl lg:text-2xl"></i>
-                  Profile
-                </a>
-              </li>
-              <li class="hover:bg-orange-50 rounded-box"><a href="post-ad.html" class="rounded-box">Post Your <i class="fa-solid fa-rectangle-ad text-lg md:text-xl lg:text-2xl"></i></a></li>
-              <button id="log-out"
-  class="relative py-2 px-8 text-black text-base font-bold nded-full overflow-hidden bg-[#f50535] text-white rounded-full transition-all duration-400 ease-in-out shadow-md hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-red-200 before:to-red-500 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-full hover:before:left-0"
->
-  Logout <i class="fa-solid fa-right-to-bracket"></i>
-</button>
-
-            </ul>
-          </div>
-    
-          
-          <div class="dropdown-end text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl flex gap-[10px] " id="sign-in-button-div">
-            <a href="login.html">
-              <button
-                class="relative px-2 py-2 px-2 xs:px-3 xs:py-3 xs:px-3 sm:px-5 sm:py-2 md:px-7 md:py-3 rounded-md bg-white z-10 border-2 border-white before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-blue-500 before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 inline-flex items-center justify-center text-sm sm:text-base md:text-lg font-semibold text-black bg-white border border-gray-200 rounded-lg shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-              >
-                Sign In
-              </button>
-            </a>
-            
-            <div class="dropdown-end text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl flex gap-[10px]" id="sign-in-button-div">
-              <a href="register.html">
-                <button
-                  class="relative px-2 py-2 px-2 xs:px-3 xs:py-3 xs:px-3 sm:px-5 sm:py-2 md:px-7 md:py-3 rounded-md bg-white z-10 border-2 border-white before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-blue-500 before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 inline-flex items-center justify-center text-sm sm:text-base md:text-lg font-semibold text-black bg-white border border-gray-200 rounded-lg shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-                >
-                  Sign Up
-                </button>
-              </a>
-            
-                </div>
+  <div class="dropdown dropdown-end pr-[10px] text-black" id="avatar-div">
+    <div tabindex="0" role="button" class="rounded-full">
+      <div class="rounded-full">
+        <img
+          alt="Tailwind CSS Navbar component"
+          src="./Assets/Images/98bccd_0048dde95e7c467fa61477f72de95fdf~mv2.gif" 
+          id="user-nav-avatar"
+          class="h-[30px] xs:h-[30px] sm:h-[35px] md:h-[40px] lg:h-[45px] w-[30px] xs:w-[30px] sm:w-[35px] md:w-[40px] lg:w-[45px] rounded-full"
+        />
       </div>
     </div>
+    <ul
+      tabindex="0"
+      class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-2 w-[180px] p-2 shadow">
+      <li class="hover:bg-orange-50 rounded-box">
+        <a class="rounded-box" href="profile.html">
+          <i class="fa-regular fa-user text-base md:text-lg lg:text-xl"></i>
+          Profile
+        </a>
+      </li>
+      <li class="hover:bg-orange-50 rounded-box">
+        <a href="post-ad.html" class="rounded-box">Post Your <i class="fa-solid fa-rectangle-ad text-base md:text-lg lg:text-xl"></i></a>
+      </li>
+      <button id="log-out"
+        class="relative py-2 px-4 text-black text-sm font-bold rounded-full overflow-hidden bg-[#f50535] text-white transition-all duration-400 ease-in-out shadow-md hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-red-200 before:to-red-500 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-full hover:before:left-0"
+      >
+        Logout <i class="fa-solid fa-right-to-bracket"></i>
+      </button>
+      <a href="register.html" class="mx-auto"><button id="register-after-btn"
+        class="relative py-2 px-4 text-black text-sm font-bold rounded-full overflow-hidden bg-[#10b981] text-white rounded-full transition-all duration-400 ease-in-out shadow-md hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-green-200 before:to-green-500 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-full hover:before:left-0"
+      >
+        Re-authenticate
+      </button></a>
+    </ul>
+  </div>
+
+  <div class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl flex gap-[8px]" id="sign-in-button-div">
+    <a href="login.html">
+      <button
+        class="relative px-2 py-1 xs:px-2 xs:py-2 sm:px-4 sm:py-2 md:px-6 md:py-2 rounded-md bg-white z-10 border-2 border-white before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-blue-500 before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 inline-flex items-center justify-center text-xs sm:text-sm md:text-base font-semibold text-black bg-white border border-gray-200 rounded-lg shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+      >
+        Sign In
+      </button>
+    </a>
     
-    <!-- ., Navbar ended -->
+    <a href="register.html">
+      <button
+        class="relative px-2 py-1 xs:px-2 xs:py-2 sm:px-4 sm:py-2 md:px-6 md:py-2 rounded-md bg-white z-10 border-2 border-white before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full hover:text-white before:-right-full before:hover:right-0 before:rounded-full before:bg-blue-500 before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700 inline-flex items-center justify-center text-xs sm:text-sm md:text-base font-semibold text-black bg-white border border-gray-200 rounded-lg shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+      >
+        Sign Up
+      </button>
+    </a>
+  </div>
+</div>
+<!-- ., Navbar ended -->
+
+
+
+
+<!-- Preloader Started -->
+<div id="preloader" class="fixed inset-0 flex items-center justify-center bg-orange-50 z-50">
+  <div class="flex flex-col items-center">
+    <!-- Spinner -->
+    <div class="w-16 h-16  loading loading-bars loading-lg"></div>
+    <!-- Loading Text -->
+    <p class="mt-4 text-lg font-semibold text-gray-700">Loading...</p>
+  </div>
+</div>
+
+<!-- Preloader Ended -->
+
+
 
 <!--  Modal Started -->
 <div class="modal-container w-[500px] flex justify-center">
   <dialog id="my_modal_3" class="modal modal-div">
-    <div class="modal-box">
+    <div class="modal-box bg-gradient-to-r from-[#14b8a6] via-[#059669] to-[#047857] text-white">
       <form method="dialog">
         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" id="cross-button">✕</button>
       </form>
       <h3 class="text-sm sm:text-sm md:text-md lg:text-lg font-medium sm:font-medium md:font-semibold lg:font-bold">You are not logged in<br>
-        <b>Please re-authenticate before <span class="text-red-500">deleting your account.</span></b></h3>
+        <b>Please re-authenticate before <span class="text-red-500 text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">deleting your account.</span></b></h3>
   <div class="flex justify-center gap-[20px] mt-[20px]">
-      <a href="register.html"><button class="text-md xs:text-md sm:text-lg md:text-xl lg:text-2xl p-[5px] rounded-md bg-blue-700 text-white hover:shadow-[1px_1px_3px_black] active:border-[1px]">Register</button></a>
+      <a href="register.html"><button class="text-md xs:text-md sm:text-lg md:text-xl lg:text-2xl p-[5px] rounded-md bg-gradient-to-r from-[#14b8a6] via-[#059669] to-[#047857] text-white shadow-[1px_1px_2px_white] hover:shadow-[1px_1px_3px_black] active:border-[1px]">Re-authenticate</button></a>
   </div>
     <p class="py-4" >Click on ✕ button to close</p>
   </div>
@@ -105,7 +123,7 @@
 
 
 <!-- ., Content section started -->
-<div class="content-conatiner shadow-[2px_2px_5px_gray]  bg-orange-50 p-[10px] sm:px-[20px] md:px-[30px] lg:px-[50px] py-[30px] border-[blue]">
+<div class="content-conatiner   bg-orange-50 p-[10px] sm:px-[20px] md:px-[30px] lg:px-[50px] py-[30px]">
 <div class="input_section flex items-center">
   <div class="join w-full">
     <button class="join-item text-md xs:text-lg sm:text-xl md:text-2xl lg:text-3xl border-l-[1px] border-t-[1px] rounded-sm border-b-[1px]"><i class="fa-solid fa-magnifying-glass px-[20px]"></i></button>
@@ -119,14 +137,15 @@
 </div>
 
 <h1 class="mt-[20px] text-2xl md:text-3xl lg:text-4xl font-bold">Products</h1>
-<div class="cards-section flex flex-wrap justify-center gap-[50px] mt-[100px]">
+<div class="cards-section flex flex-wrap justify-center gap-[50px] mt-[20px]" id="div" >
   
 <!-- ., Card -->
-  <div class="card bg-base-100 w-full xs:w-full sm:w-[450px] md:w-[450px] lg:w-[450px] shadow-xl">
+  <!-- <div class="card bg-base-100 w-full xs:w-full sm:w-[450px] md:w-[450px] lg:w-[450px] shadow-xl">
     <figure>
       <img
       src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes" />
+      alt="Shoes"  
+      class="h-[350px] rounded-xl"/>
     </figure>
     <div class="card-body">
       <h2 class="card-title">Shoes!</h2>
@@ -135,12 +154,23 @@
         <h1 class="text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl font-light xs:font-light sm:font-medium md:font-normal lg:font-semibold">RS 10,000</h1>
         <button class="bg-pink-500 p-[5px]  md:p-[5px] lg:p-[7px] rounded-lg text-sm xs:text-md sm:text-md md:text-lg lg:text-xl text-white shadow-[1px_1px_2px_gray] hover:shadow-[1px_1px_2px_black]">Buy Now</button>
       </div>
-    </div>
+      <div class="rounded-full border-[1px] p-[8px] shadow-[0px_0px_2px_black] flex gap-[20px] items-center w-fit">
+        <div>
+          <img src="./Assets/Images/852bc3af0c35e5d20e2da8fcd61bc3a9.jpeg" alt="" class="h-[30px] xs:h-[30px] sm:h-[40px] md:h-[50px] lg:h-[60px]  w-[30px] xs:w-[30px] sm:w-[40px] md:w-[50px] lg:w-[60px] rounded-full shadow-[0px_0px_2px_black]">
+        </div>
+  <div>
+ <h1 class="text-sm sm:text-md md:text-lg lg:text-xl">Muhammad Huzaifa</h1>
+ <h1 class="text-sm sm:text-md md:text-lg lg:text-xl"><i class="fa-solid fa-phone"></i> Contact: 03212021407</h1>
+ 
   </div>
+
+      </div>
+    </div>
+  </div> -->
 
 
   <!-- ., Card -->
-  <div class="card bg-base-100 w-full xs:w-full sm:w-[450px] md:w-[450px] lg:w-[450px] shadow-xl">
+  <!-- <div class="card bg-base-100 w-full xs:w-full sm:w-[450px] md:w-[450px] lg:w-[450px] shadow-xl">
     <figure>
       <img
       src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -154,10 +184,10 @@
         <button class="bg-pink-500 p-[5px]  md:p-[5px] lg:p-[7px] rounded-lg text-sm xs:text-md sm:text-md md:text-lg lg:text-xl text-white shadow-[1px_1px_2px_gray] hover:shadow-[1px_1px_2px_black]">Buy Now</button>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- ., Card -->
-  <div class="card bg-base-100 w-full xs:w-full sm:w-[450px] md:w-[450px] lg:w-[450px] shadow-xl">
+  <!-- <div class="card bg-base-100 w-full xs:w-full sm:w-[450px] md:w-[450px] lg:w-[450px] shadow-xl">
     <figure>
       <img
       src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -171,10 +201,10 @@
         <button class="bg-pink-500 p-[5px]  md:p-[5px] lg:p-[7px] rounded-lg text-sm xs:text-md sm:text-md md:text-lg lg:text-xl text-white shadow-[1px_1px_2px_gray] hover:shadow-[1px_1px_2px_black]">Buy Now</button>
       </div>
     </div>
-  </div>
+  </div> -->
 
 <!-- ., Card -->
-<div class="card bg-base-100 w-full xs:w-full sm:w-[450px] md:w-[450px] lg:w-[450px] shadow-xl">
+<!-- <div class="card bg-base-100 w-full xs:w-full sm:w-[450px] md:w-[450px] lg:w-[450px] shadow-xl">
   <figure>
     <img
     src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -188,7 +218,7 @@
       <button class="bg-pink-500 p-[5px]  md:p-[5px] lg:p-[7px] rounded-lg text-sm xs:text-md sm:text-md md:text-lg lg:text-xl text-white shadow-[1px_1px_2px_gray] hover:shadow-[1px_1px_2px_black]">Buy Now</button>
     </div>
   </div>
-</div>
+</div> -->
 
 </div>
 

@@ -10,61 +10,77 @@
 </head>
 <body>  
 
-    <!-- ., Navbar started -->
-  <div class="navbar bg-[#4C68FF] text-white">
-    <div class="flex-1">
-      <h1 class="text-xl md:text-2xl lg:text-3xl font-semibold"><i class="fa-brands fa-sellsy"></i> Buy / Sells Corner</h1>
-    </div>
-
-      <div class="dropdown dropdown-end pr-[20px] text-black" id="avatar-div">
-          <div tabindex="0" role="button" class="rounded-full">
-            <div class="rounded-full">
-              <img
-                alt="Tailwind CSS Navbar component"
-                src="./Assets/Images/98bccd_0048dde95e7c467fa61477f72de95fdf~mv2.gif" 
-                id="user-nav-avatar"
-                class="h-[40px] xs:h-[40px] sm:h-[50px] md:h-[60px] lg:h-[70px] w-[40px] xs:w-[40px] sm:w-[50px] md:w-[60px] lg:w-[70px] rounded-full border-[1px]"
-                />
-            </div>
-          </div>
-          <ul
-            tabindex="0"
-            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-[200px] p-2 shadow">
-            <li class="hover:bg-orange-50 rounded-box">
-              <a class="rounded-box" href="index.html">
-                <i class="fa-solid fa-house text-xl"></i>
-                Home
-              </a>
-            </li>
-            <li class="hover:bg-orange-50 rounded-box"><a href="post-ad.html" class="rounded-box">Post Your <i class="fa-solid fa-rectangle-ad text-lg md:text-xl lg:text-2xl"></i></a></li>
-          </ul>
-        </div>
-  
-        
+<!-- ., Navbar started -->
+<div class="navbar bg-[#4C68FF] text-white p-2">
+  <div class="flex-1">
+    <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold">
+      <i class="fa-brands fa-sellsy"></i> Buy / Sells Corner
+    </h1>
   </div>
-  <!-- ., Navbar ended -->
-
-
-<!-- Content Started -->
-<div class="content-section-started p-[10px] shadow-[1px_1px_3px_gray] rounded-box bg-orange-50 mx-[10px] my-[10px]">
-    <div class="profile-section w-[300px] sm:w-[300px] md:w-[400px] lg:w-[500px] mx-auto mt-[20px]">
-        <img src="./Assets/Images/771.gif" alt="" class=" h-[40%] sm:h-[40%] md:h-[50%] lg:h-[60%]  w-[40%] sm:w-[40%] md:w-[45%] lg:w-[60%] border-[1px] rounded-full mx-auto">
-        <h1 class="text-center font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl mt-[20px] text-primary">Muhammad Huzaifa</h1>
-        <div class="details-section mt-[10px] flex flex-col gap-[10px] mt-[10px] ">
-            <h1 class="rounded-box text-md sm:text-lg md:text-xl lg:text-2xl p-[5px] shadow-[0px_0px_5px_gray] text-primary bg-white"><i class="fa-solid fa-signature"></i> Full Name: Muhammad Huzaifa</h1>
-            <h1 class="rounded-box text-md sm:text-lg md:text-xl lg:text-2xl p-[5px] shadow-[0px_0px_5px_gray] text-primary bg-white"><i class="fa-solid fa-envelope"></i> Email: huzaifafurqan22@gmail.com</h1>
-            <h1 class="rounded-box text-md sm:text-lg md:text-xl lg:text-2xl p-[5px] shadow-[0px_0px_5px_gray] text-primary bg-white"><i class="fa-solid fa-mobile"></i> Phone Number: 03212021407</h1>
-        </div>
-        <div class="rounded-box mt-[50px] text-primary">
-            <h1 class="text-md sm:text-lg md:text-xl lg:text-2xl text-center mt-[15px] font-semibold">Your Post Details</h1>
-            <h1 class="text-center text-xl text-red-500 font-bold">You have not posted yet</h1>
-           <h1 class="rounded-box text-md sm:text-lg md:text-xl lg:text-2xl p-[5px] shadow-[0px_0px_5px_gray] text-primary bg-white mt-[10px]">Total Posts: 1</h1>
-           <h1 class="rounded-box text-md sm:text-lg md:text-xl lg:text-2xl p-[5px] shadow-[0px_0px_5px_gray] text-primary bg-white mt-[10px]">Your Selected Categoeries: Electronics</h1>
-        </div>
+  <div class="dropdown dropdown-end pr-2" id="avatar-div">
+    <div tabindex="0" role="button" class="rounded-full">
+      <img
+        alt="Tailwind CSS Navbar component"
+        src="./Assets/Images/98bccd_0048dde95e7c467fa61477f72de95fdf~mv2.gif"
+        id="user-nav-avatar"
+        class="h-[30px] sm:h-[35px] md:h-[40px] lg:h-[50px] w-[30px] sm:w-[35px] md:w-[40px] lg:w-[50px] rounded-full border-[1px]"
+      />
     </div>
+    <ul
+      tabindex="0"
+      class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-2 w-[180px] p-2 shadow-md"
+    >
+      <li class="hover:bg-orange-50 rounded-box text-black">
+        <a class="rounded-box" href="index.html">
+          <i class="fa-solid fa-house text-lg"></i> Home
+        </a>
+      </li>
+      <li class="hover:bg-orange-50 rounded-box text-black">
+        <a href="post-ad.html" class="rounded-box">
+          Post Your <i class="fa-solid fa-rectangle-ad text-base md:text-lg lg:text-xl"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>
-
+<!-- ., Navbar ended -->
+<!-- Content Started -->
+<div class="content-section-started p-6 bg-white shadow-lg rounded-lg mx-auto mt-6 max-w-md">
+  <div class="profile-section text-center">
+    <img
+      src="./Assets/Images/771.gif"
+      alt="Profile Picture"
+      class="h-[120px] w-[120px] border-2 border-primary rounded-full mx-auto"
+    />
+    <h1 class="text-2xl font-bold text-primary mt-4">Muhammad Huzaifa</h1>
+    <div class="details-section mt-4 space-y-2">
+      <h2 class="text-lg font-semibold text-primary bg-gray-100 p-2 rounded-lg shadow-sm">
+        <i class="fa-solid fa-signature"></i> Full Name: Muhammad Huzaifa
+      </h2>
+      <h2 class="text-lg font-semibold text-primary bg-gray-100 p-2 rounded-lg shadow-sm">
+        <i class="fa-solid fa-envelope"></i> Email: huzaifafurqan22@gmail.com
+      </h2>
+      <h2 class="text-lg font-semibold text-primary bg-gray-100 p-2 rounded-lg shadow-sm">
+        <i class="fa-solid fa-mobile"></i> Phone Number: 03212021407
+      </h2>
+    </div>
+  </div>
+  <div class="post-details mt-6 p-4 bg-orange-50 rounded-lg shadow-md">
+    <h2 class="text-lg font-semibold text-primary text-center mb-3">Your Post Details</h2>
+    <p class="text-center text-xl text-red-500 font-bold">You have not posted yet</p>
+    <div class="text-center mt-4">
+      <p class="text-md font-semibold text-primary bg-white p-2 rounded-lg shadow-sm">
+        Total Posts: 1
+      </p>
+      <p class="text-md font-semibold text-primary bg-white p-2 rounded-lg shadow-sm mt-2">
+        Your Selected Categories: Electronics
+      </p>
+    </div>
+  </div>
+</div>
 <!-- Content Ended -->
+
+
 
 
 <!-- ., Daisy Ui Cdn-->
