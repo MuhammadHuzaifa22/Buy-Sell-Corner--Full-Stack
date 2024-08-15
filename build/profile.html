@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+
+    <!-- ., Font Awesome Cdn -->
+    <script src="https://kit.fontawesome.com/0ae0890014.js" crossorigin="anonymous"></script>
+</head>
+<body>  
+
+<!-- ., Navbar started -->
+<div class="navbar bg-[#4C68FF] text-white p-2">
+  <div class="flex-1">
+    <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold">
+      <i class="fa-brands fa-sellsy"></i> Buy / Sells Corner
+    </h1>
+  </div>
+  <div class="dropdown dropdown-end pr-2" id="avatar-div">
+    <div tabindex="0" role="button" class="rounded-full">
+      <img
+        alt="Tailwind CSS Navbar component"
+        src="./Assets/Images/98bccd_0048dde95e7c467fa61477f72de95fdf~mv2.gif"
+        id="user-nav-avatar"
+        class="h-[30px] sm:h-[35px] md:h-[40px] lg:h-[50px] w-[30px] sm:w-[35px] md:w-[40px] lg:w-[50px] rounded-full"
+      />
+    </div>
+    <ul
+      tabindex="0"
+      class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-2 w-[180px] p-2 shadow-md"
+    >
+      <li class="hover:bg-orange-50 rounded-box text-black">
+        <a class="rounded-box" href="index.html">
+          <i class="fa-solid fa-house text-lg"></i> Home
+        </a>
+      </li>
+      <li class="hover:bg-orange-50 rounded-box text-black">
+        <a href="post-ad.html" class="rounded-box">
+          Post Your <i class="fa-solid fa-rectangle-ad text-base md:text-lg lg:text-xl"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- ., Navbar ended -->
+
+
+<!-- ., Notification and alerts sounds started -->
+<audio id="notification-sound" src="./Assets/Images/mixkit-software-interface-back-2575.wav" preload="auto"></audio>
+<audio id="notification-sound2" src="./Assets/Images/mixkit-message-pop-alert-2354.mp3" preload="auto"></audio>
+<!-- ., Notification and alerts sounds ended -->
+
+<!-- Content Started -->
+<div class="content-section-started p-6 bg-white shadow-lg rounded-lg mx-auto mt-6 max-w-md" id="content">
+  <div class="profile-section text-center">
+    <img
+      src="./Assets/Images/771.gif"
+      alt="Profile Picture"
+      class="h-[120px] w-[120px] border-2 border-primary rounded-full mx-auto"
+      id="image-user"
+    />
+    <h1 class="text-2xl font-bold text-primary mt-4" id="prof-name">Muhammad Huzaifa</h1>
+    <div class="details-section mt-4 space-y-2">
+      <h2 class="text-lg font-semibold text-primary bg-gray-100 p-2 rounded-lg shadow-sm" id="prof-email">
+        <i class="fa-solid fa-envelope"></i> Email: huzaifafurqan22@gmail.com
+      </h2>
+      <!-- <h2 class="text-lg font-semibold text-primary bg-gray-100 p-2 rounded-lg shadow-sm" id="prof-number">
+        <i class="fa-solid fa-mobile"></i> Phone Number: 03212021407
+      </h2> -->
+    </div>
+  </div>
+</div>
+<!-- Content Ended -->
+
+
+<!-- ., Modal Started -->
+<dialog id="my_modal_3" class="modal">
+  <div class="modal-box bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626]">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" id="cross-btn">✕</button>
+    </form>
+    <h3 class="text-sm sm:text-sm md:text-md lg:text-lg font-medium sm:font-medium md:font-semibold lg:font-bold">You are not logged in<br>
+      <b>Please Login OR Register to enter this page.</b>
+    </h3>
+    <div class="flex justify-center gap-4 mt-4">
+      <a href="login.html"><button class="text-sm xs:text-sm sm:text-lg md:text-xl lg:text-2xl py-2 px-4 rounded-md bg-blue-700 text-white hover:shadow-md active:border-1">Login</button></a>
+      <a href="register.html"><button class="text-sm xs:text-sm sm:text-lg md:text-xl lg:text-2xl py-2 px-4 rounded-md bg-blue-700 text-white hover:shadow-md active:border-1">Register</button></a>
+    </div>
+  </div>
+</dialog>
+<!-- Modal Ended -->
+
+
+<!-- ., Daisy Ui Cdn-->
+
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+<!-- .,Tailwind CSS CDn -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- ., JavaScript Link -->
+<script type="module" src="profile.js"></script>
+
+
+
+</body>
+</html>  

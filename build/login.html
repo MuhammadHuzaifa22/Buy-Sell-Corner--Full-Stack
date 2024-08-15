@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page || Buy/Sell Corner</title>
+
+    <!-- ., Font Awesome Cdn -->
+    <script src="https://kit.fontawesome.com/0ae0890014.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   <!-- ., Navbar started -->
+<nav class="bg-[#4C68FF] px-4 py-2 text-white">
+  <div class="logo-section">
+      <h1 class="text-xl md:text-2xl lg:text-3xl font-semibold">
+          <i class="fa-brands fa-sellsy"></i> Buy / Sells Corner
+      </h1>
+  </div>
+</nav>
+<!-- ., Navbar ended -->
+
+<!-- ., Toast Started -->
+<div class="toast-msg"></div>
+<!-- ., Toast Ended -->
+
+<!-- ., Form started -->
+<h1 class="uppercase font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl text-center mt-24">
+  Login <i class="fa-solid fa-gears"></i>
+</h1>
+<form class="w-full sm:w-[400px] md:w-[450px] lg:w-[500px] mx-auto mt-8 rounded-lg shadow-md bg-orange-50 flex flex-col gap-4 p-6">
+  <label class="text-sm sm:text-base md:text-lg lg:text-xl font-medium">Email</label>
+  <input placeholder="Enter Your Email" id="email" class="text-sm sm:text-base md:text-lg lg:text-xl p-2 bg-orange-50 border rounded-md border-gray-300">
+  <label class="text-sm sm:text-base md:text-lg lg:text-xl font-medium">Password</label>
+  <input placeholder="Enter Your Password" id="password" class="text-sm sm:text-base md:text-lg lg:text-xl p-2 bg-orange-50 border rounded-md border-gray-300">
+
+  <div class="flex flex-col items-center mt-4" id="upload-text">
+      <label class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center text-primary" id="upload-image-tag">Upload Profile Photo</label>
+      <div class="flex items-center justify-center h-16 w-16 mt-4 bg-white rounded-md" id="upload-file-name">
+          <label for="user-photo" class="relative flex items-center justify-center w-full h-full border border-gray-300 rounded-md cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+              </svg>
+              <input type="file" id="user-photo" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
+          </label>
+      </div>
+  </div>
+  <button class="w-fit mx-auto uppercase bg-primary text-base lg:text-lg text-white p-2 rounded-lg px-4 hover:bg-blue-600 hover:shadow-md border border-primary active:border-white" id="log-in" type="submit">
+      Login <i class="fa-solid fa-right-to-bracket"></i>
+  </button>
+  <a href="register.html" class="text-center mt-2 text-primary uppercase text-xs sm:text-xs md:text-sm lg:text-lg hover:text-blue-800">Not a user? Please register first</a>
+</form>
+<!-- ., Form ended -->
+
+
+
+<!-- ., Nofication and alerts sounds started -->
+<audio id="notification-sound" src="./Assets/Images/mixkit-software-interface-back-2575.wav" preload="auto"></audio>
+<audio id="notification-sound2" src="./Assets/Images/mixkit-message-pop-alert-2354.mp3" preload="auto"></audio>
+<!-- ., Notification and alerts sounds ended-->
+
+
+    <!-- ., Daisy Ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!-- ., Tailwind CSS Cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- ., JavaScipt Link -->
+    <script src="app.js" type="module"></script>
+</body>
+</html>
