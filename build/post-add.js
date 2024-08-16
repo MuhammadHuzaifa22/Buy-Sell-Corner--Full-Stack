@@ -16,7 +16,7 @@ const postPic = document.getElementById('post-pic');
 const form = document.querySelector('form');
 const producTitle = document.getElementById('product-title');
 const productDescription = document.getElementById('product-description');
-const productPrice = document.getElementById('product-price');
+let productPrice = document.getElementById('product-price');
 const sellerName = document.getElementById('seller-name');
 const sellerNumber = document.getElementById('seller-number');
 const alertSound = document.getElementById('notification-sound2');
@@ -24,25 +24,60 @@ const toast = document.querySelector('.toast-msg');
 const uloadProfileImageName = document.getElementById('uload-profile-image-name');
 const photoURL = JSON.parse(localStorage.getItem('user-image-url'));
 const postBtn = document.getElementById('post-btn');
-
+const iconSuccess = document.getElementById('icon-success');
+const sound = document.getElementById('notification-sound');
+let azadisale = false;
 let arr = [];
+const saleBtn = document.getElementById('sale-btn');
+const alertTag = document.getElementById('alert-tag');
+
 
 // ., Use Regex For Validations
-const productTitleRegex = /^[A-Z][a-zA-Z\s]{9,19}$/;
-const productDescriptionRegex = /^[A-Z][a-zA-Z\s]{9,39}$/;
+const productTitleRegex = /^[A-Z][A-Za-z0-9\s!@#$%^&*(),.?":{}|<>]{2,49}$/;
+const productDescriptionRegex = /^[A-Z][A-Za-z0-9\s!@#$%^&*(),.?":{}|<>]{5,99}$/;
 const productPriceRegex = /^[1-9][0-9]{1,9}$/;
 const nameRegex = /^[A-Z][a-zA-Z]{2,13}$/;
 const userNumberRegex = /^03\d{8}$/;
 const fileRegex = /^(?!.*\.gif$).*\.((jpg|jpeg|png|bmp|tiff|webp|svg)$)/i;
-const iconSuccess = document.getElementById('icon-success');
-const sound = document.getElementById('notification-sound');
+
+
 
 // ., Display None Elements
 toast.style.display = 'none';
+alertTag.style.display = 'none';
 
-// ., On Auth State Change Function (For Check User Exsistance);
-onAuthStateChanged(auth, (user) => {
-  if (user && userPhoto) {
+
+// Sale button function
+saleBtn.addEventListener('click',()=>{
+  alertSound.play()
+  if(azadisale === false){
+    azadisale = true;
+    saleBtn.innerHTML = 'OFF'
+    alertTag.style.display = 'block';
+    console.log(Math.round(productPrice))
+
+  }else{
+    azadisale = false;
+    saleBtn.innerHTML = 'ON'
+    alertTag.style.display = 'none';
+  }
+  getSaleValue(azadisale)
+ })
+ 
+
+ 
+ // Azzadi sale function
+ function getSaleValue(sale){
+   console.log(sale);
+   
+   return sale
+  }
+  
+  
+
+  // ., On Auth State Change Function (For Check User Exsistance);
+  onAuthStateChanged(auth, (user) => {
+    if (user && userPhoto) {
     console.log("🚀 ~ onAuthStateChanged ~ user:", user.email)
     const uid = user.uid;
     checkUser(user);
@@ -88,6 +123,7 @@ postPic.addEventListener('change', () => {
 // ., Form Button Submit Function
 form.addEventListener('submit',async (event) => {
   event.preventDefault();
+  console.log(azadisale)
 
 
   // ., Undefined OR Null Vaildations
@@ -134,7 +170,7 @@ form.addEventListener('submit',async (event) => {
     }, 3000);
     return
   }
-
+  
   if (productDescription.value === '' || productDescription.value === null) {
     toast.style.display = 'block';
     toast.innerHTML = `<div class="toast toast-top toast-center mt-[70px]">
@@ -148,7 +184,7 @@ form.addEventListener('submit',async (event) => {
     }, 3000);
     return
   }
-
+  
   if (productPrice.value === '' || productPrice.value === null) {
     toast.style.display = 'block';
     toast.innerHTML = `<div class="toast toast-top toast-center mt-[70px]">
@@ -210,14 +246,13 @@ form.addEventListener('submit',async (event) => {
 
   if (!productTitleRegex.test(producTitle.value)) {
     toast.style.display = 'block';
-      toast.innerHTML = `<div class="toast toast-top toast-center mt-[70px]">
+    toastContainer.innerHTML = `<div class="toast toast-top toast-center mt-[70px]">
     <div class="bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626] p-[10px] rounded-lg text-white">
-    <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">
-    "Invalid product title. Please ensure the following:"<br>
-    "1. The <b>title should start with a capital letter.</b>"<br>
-    "2. The <b>title should be between 6 and 20 characters long.</b>"<br>
-    "3. The <b>title can only contain letters and spaces.</b>"
-    </span>
+      <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">Invalid <b>product title!</b> Please ensure the title:<br>
+      - Starts with a capital letter<br>
+      - Has a minimum length of 3 characters<br>
+      - Has a maximum length of 50 characters<br>
+      - Can include letters, numbers, spaces, and common symbols.</span>
     </div>
     </div>`;
     alertSound.play()
@@ -232,13 +267,11 @@ form.addEventListener('submit',async (event) => {
     toast.style.display = 'block';
     toast.innerHTML = `<div class="toast toast-top toast-center mt-[70px]">
     <div class="bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626] p-[10px] rounded-lg text-white">
-    <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">
-    "Invalid product description. Please ensure the following:"<br>
-    "1. The <b>description should start with a capital letter.</b>"<br>
-    "2. The <b>description should be between 10 and 40 characters long.</b>"<br>
-    "3. The <b>description cannot contain numbers or symbols.</b>"<br>
-    "4. The <b>description can only contain letters and spaces.</b>"
-    </span>
+      <span class="text-white text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">Invalid <b>product description!</b> Please ensure the description:<br>
+      - Starts with a capital letter<br>
+      - Has a minimum length of 6 characters<br>
+      - Has a maximum length of 100 characters<br>
+      - Can include letters, numbers, spaces, and common symbols.</span>
     </div>
     </div>`;
     alertSound.play()
@@ -306,37 +339,46 @@ form.addEventListener('submit',async (event) => {
     return
   }
 
-  //  Send data to firestore
-  try {
-    postBtn.classList.add('loading' ,'loading-bars' ,'loading-md');
+  let azadiSale = getSaleValue(azadisale);
+  console.log("🚀 ~ form.addEventListener ~ azadisale:", azadiSale)
+
+
+  if(azadiSale === false){
+    //  Send data to firestore
+     try {
+      postBtn.classList.add('loading' ,'loading-bars' ,'loading-md');
     postBtn.style.marginTop = '-20px'; 
     console.log(photoURL);
     showUrl(postPic.files[0]);
-     const fileUrl = await showUrl(postPic.files[0])
-    console.log("🚀 ~ form.addEventListener ~ fileUrl:", fileUrl)
+    const fileUrl = await showUrl(postPic.files[0]);
+     console.log("🚀 ~ form.addEventListener ~ fileUrl:", fileUrl)
      const docRef = await addDoc(collection(db, "posts"), {
        postImage:fileUrl,
-      producTitle: producTitle.value,
-      productDescription:productDescription.value,
+       producTitle: producTitle.value,
+       productDescription:productDescription.value,
       productPrice:productPrice.value,
       sellerName:sellerName.value,
       sellerNumber:sellerNumber.value,
       photoURL:photoURL,
-      time: Timestamp.fromDate(new Date())
+      time: Timestamp.fromDate(new Date()),
     });
     form.reset();
+    azadisale = false;
+    saleBtn.innerHTML = 'ON'
+    alertTag.style.display = 'none';  
+    uloadProfileImageName.innerHTML = 'Upload Product Photo';
     console.log("Document written with ID: ", docRef.id);
     postBtn.classList.remove('loading' ,'loading-bars' ,'loading-md');
     my_modal_4.showModal();
     postBtn.style.marginTop = '0px'; 
     sound.play();
     setTimeout(()=>{
-  setTimeout(()=>{
-    iconSuccess.classList.remove('fa-regular')
-    iconSuccess.classList.add('fa-solid')
-  },100)
-},2000)
-      arr.push({
+      setTimeout(()=>{
+        iconSuccess.classList.remove('fa-regular')
+        iconSuccess.classList.add('fa-solid')
+      },100)
+    },2000)
+    arr.push({
       postImage:fileUrl,
       producTitle: producTitle.value,
       productDescription:productDescription.value,
@@ -352,7 +394,68 @@ form.addEventListener('submit',async (event) => {
     console.error("Error adding document: ", e);
   }
 
-
+  
+}else{
+  let officialPrice = productPrice.value;
+    productPrice = Math.round(productPrice.value * 0.7);
+    console.log("🚀 ~ form.addEventListener ~ productPrice:", productPrice)
+    
+    
+    //  Send data to firestore
+    try {
+      postBtn.classList.add('loading' ,'loading-bars' ,'loading-md');
+      postBtn.style.marginTop = '-20px'; 
+    console.log(photoURL);
+    showUrl(postPic.files[0]);
+     const fileUrl = await showUrl(postPic.files[0]);
+     console.log("🚀 ~ form.addEventListener ~ fileUrl:", fileUrl)
+     const docRef = await addDoc(collection(db, "posts"), {
+       postImage:fileUrl,
+      producTitle: producTitle.value,
+      productDescription:productDescription.value,
+      productPrice:productPrice,
+      officialPrice:officialPrice,
+      sellerName:sellerName.value,
+      sellerNumber:sellerNumber.value,
+      photoURL:photoURL,
+      time: Timestamp.fromDate(new Date()),
+      sale:azadisale
+    });
+    form.reset();
+    azadisale = false;
+    saleBtn.innerHTML = 'ON'
+    alertTag.style.display = 'none';  
+    uloadProfileImageName.innerHTML = 'Upload Product Photo';
+    console.log("Document written with ID: ", docRef.id);
+    postBtn.classList.remove('loading' ,'loading-bars' ,'loading-md');
+    my_modal_4.showModal();
+    postBtn.style.marginTop = '0px'; 
+    sound.play();
+    setTimeout(()=>{
+      setTimeout(()=>{
+        iconSuccess.classList.remove('fa-regular')
+        iconSuccess.classList.add('fa-solid')
+      },100)
+    },2000)
+    arr.push({
+      postImage:fileUrl,
+      producTitle: producTitle.value,
+      productDescription:productDescription.value,
+      productPrice:productPrice,
+      officialPrice:officialPrice,
+      sellerName:sellerName.value,
+      sellerNumber:sellerNumber.value,
+      photoURL:photoURL,
+      time: Timestamp.fromDate(new Date()),
+      sale:azadisale
+    });
+    console.log(arr);
+  } catch (e) {
+    postBtn.classList.add('loading' ,'loading-bars' ,'loading-md');
+    console.error("Error adding document: ", e);
+  }
+  
+}
 })
 
 
@@ -369,6 +472,3 @@ async function showUrl(file) {
     
   }
 }
-
-
-

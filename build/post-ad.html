@@ -27,11 +27,15 @@
       tabindex="0"
       class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-2 w-48 p-2 shadow-md">
       <li class="hover:bg-orange-50 rounded-box">
-        <a class="rounded-box text-black">
+        <a class="rounded-box text-black" href="profile.html">
           <i class="fa-regular fa-user text-base md:text-lg lg:text-xl"></i>
           Profile
         </a>
       </li>
+      <li class="hover:bg-orange-50 rounded-box text-black">
+        <a class="rounded-box" href="index.html">
+          <i class="fa-solid fa-house text-lg"></i> Home
+        </a>
     </ul>
   </div>
 </div>
@@ -55,20 +59,28 @@
       <i class="fa-solid fa-plus text-white hover:text-black"></i>
       <input type="file" class="hidden" id="post-pic" />
   </label>
-  <h1 class="font-thin xs:font-thin sm:font-light md:font-normal lg:font-medium text-white text-md xs:text-lg sm:text-xl md:text-2xl lg:text-3xl cursor-pointer hover:text-black" id="uload-profile-image-name">Upload Product Photo</h1>
+  <h1 class="font-medium text-white text-md xs:text-lg sm:text-xl md:text-2xl lg:text-3xl cursor-pointer hover:text-black" id="uload-profile-image-name">Upload Product Photo</h1>
   </div>
   <div class="input-div flex flex-col gap-4 mt-8 mb-6">
-    <input type="text" id="product-title" placeholder="Product Title" class="w-full border px-4 py-2 text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl font-thin border-gray-300">
-    <input type="text" id="product-description" placeholder="Product Description" class="w-full border px-4 py-2 text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl font-thin border-gray-300">
-    <input type="text" id="product-price" placeholder="Enter Price" class="w-full border px-4 py-2 text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl font-thin border-gray-300">
-    <input type="text" id="seller-name" placeholder="Enter Your Name" class="w-full border px-4 py-3 text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl font-thin border-gray-300">
-    <input type="text" id="seller-number" placeholder="Enter Your Number" class="w-full border px-4 py-3 text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl font-thin border-gray-300">
+    <input type="text" id="product-title" placeholder="Product Title" class="w-full border px-4 py-2 text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl font-semibold border-gray-300">
+    <input type="text" id="product-description" placeholder="Product Description" class="w-full border px-4 py-2 text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl font-semibold border-gray-300">
+    <input type="text" id="product-price" placeholder="Enter Price" class="w-full border px-4 py-2 text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl font-semibold border-gray-300">
+    <input type="text" id="seller-name" placeholder="Enter Your Name" class="w-full border px-4 py-3 text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl font-semibold border-gray-300">
+    <input type="text" id="seller-number" placeholder="Enter Your Number" class="w-full border px-4 py-3 text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl font-semibold border-gray-300">
   </div>
-  <div class="flex justify-end mt-[-20px]">
+  <div>
+    <h1 class="text-green-700 font-semibold text-2xl">Want to join the Azadi sale? Click here!   <h1 class="bg-green-700 text-white border border-white border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group cursor-pointer w-fit" id="sale-btn">
+    <span class="bg-white shadow-white absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>ON</h1></h1>
+  </div>
+  <h1 class="text-center text-sm sm:text-md md:text-lg lg:text-xl font-semibold text-green-700 absolute" id="alert-tag">In this sale, your product price will be reduced by 30%.</h1>
+
+
+  <div class="flex justify-end mt-[20px]">
     <button class="bg-primary text-white py-2 px-4 text-xs xs:text-xs sm:text-sm md:text-md lg:text-lg shadow-md rounded-lg uppercase font-semibold hover:shadow-lg active:border-2 border-white" type="submit" id="post-btn">Post Now</button>
   </div>
 </form>
 <!-- ., Content section ended -->
+
 
 <!-- ., Modal Started -->
 <dialog id="my_modal_3" class="modal">
@@ -86,6 +98,9 @@
   </div>
 </dialog>
 <!-- Modal Ended -->
+
+
+
 
 <!-- ., Success Modal Section -->
 <dialog id="my_modal_4" class="modal">
