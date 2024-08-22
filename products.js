@@ -1,9 +1,9 @@
-import { collection,getDocs, doc,addDoc,Timestamp, query, where, orderBy, } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
-import { onAuthStateChanged,signOut  } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import { collection,getDocs, doc,addDoc,Timestamp, query, where, orderBy, } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+import { onAuthStateChanged,signOut  } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 import { auth, db } from './config.js';
 
 
-// ., Call Variables
+// Declare Variables
 const avatarDiv = document.getElementById('avatar-div');
 const signInButtondiv = document.getElementById('sign-in-button-div');
 const userNavAvatar = document.getElementById('user-nav-avatar');
@@ -15,7 +15,14 @@ const modalDiv = document.querySelector('.modal-div');
 const div = document.getElementById('div');
 const preloader = document.getElementById('preloader');
 const registerAfterBtn = document.getElementById('register-after-btn');
+let userAddress = JSON.parse(localStorage.getItem('user-address'));
 
+
+if(userAddress){
+   userAddress = userAddress;
+}else{
+   userAddress = JSON.parse(localStorage.getItem('user-address-new'))
+}
 
 modalDiv.style.display = 'none';
 registerAfterBtn.style.display = 'none';
@@ -126,10 +133,8 @@ getData();
 
 
 function renderPosts() {
-  const div = document.getElementById('item-card'); // Assuming this is your container's ID
+  const div = document.getElementById('item-card');
   div.innerHTML = '';
-
-  // Apply flexbox, gap, and wrap classes to the container
   div.className = 'flex flex-wrap gap-[50px] justify-center';
 
   if (arr.length === 0) {
@@ -186,9 +191,7 @@ function renderPosts() {
   
   </div>
 `;
-
-
-
+console.log(item.data.sellerAddressNew)
 
 // Old Price
 const oldPrice =  card.querySelector(`#officialPrice-${index}`)
@@ -202,13 +205,11 @@ if(item.data.officialPrice){
   officialPriceDetail.style.display = 'none';
 }
 
-
-let dataToSave;
 div.appendChild(card);
-card.addEventListener("click",()=>{
-  if(oldPrice.style.display === 'block'){
-      dataToSave = {
-      postImage: item.data.postImage,
+card.addEventListener('click',async()=>{
+    if(oldPrice.style.display === 'block'){
+  const docRef = await addDoc(collection(db, "single-post"), {
+    postImage: item.data.postImage,
       title: item.data.producTitle,
       description: item.data.productDescription,
       price: item.data.productPrice,
@@ -216,55 +217,34 @@ card.addEventListener("click",()=>{
       sellerName: item.data.sellerName,
       sellerNumber: item.data.sellerNumber,
       officialPrice:item.data.officialPrice,
-    };
-  }else{
-    dataToSave = {
+      sellAddress:item.data.sellerAddressNew,
+      brand:item.data.brand,
+      category:item.data.category,
+      condition:item.data.condition,
+    });
+    localStorage.setItem('docId',docRef.id)
+    console.log("Document written with ID: ", docRef.id);
+    }
+    else{
+      const docRef = await addDoc(collection(db, "single-post"), {
       postImage: item.data.postImage,
       title: item.data.producTitle,
       description: item.data.productDescription,
       price: item.data.productPrice,
       sellerPhoto: item.data.photoURL,
       sellerName: item.data.sellerName,
-      sellerNumber: item.data.sellerNumber
-    };
+      sellerNumber: item.data.sellerNumber,
+      sellAddress:item.data.sellerAddressNew,
+      brand:item.data.brand,
+      category:item.data.category,
+      condition:item.data.selectCondition,
+    })
+    console.log("Document written with ID: ", docRef.id);
+    localStorage.setItem('docId',docRef.id)
   }
-    localStorage.setItem('selectedCard', JSON.stringify(dataToSave));
-  console.log('Selected card saved to local storage:', dataToSave);
-  window.location = 'single-product.html';
+  window.location = 'single-product.html'
 })
 
-
-
-const buyBtn = card.querySelector(`#buy-now-button-${index}`);
-buyBtn.addEventListener('click', () => {
-  if(oldPrice.style.display === 'block'){
-    dataToSave = {
-    postImage: item.data.postImage,
-    title: item.data.producTitle,
-    description: item.data.productDescription,
-    price: item.data.productPrice,
-    sellerPhoto: item.data.photoURL,
-    sellerName: item.data.sellerName,
-    sellerNumber: item.data.sellerNumber,
-    officialPrice:item.data.officialPrice,
-  };
-}else{
-  dataToSave = {
-    postImage: item.data.postImage,
-    title: item.data.producTitle,
-    description: item.data.productDescription,
-    price: item.data.productPrice,
-    sellerPhoto: item.data.photoURL,
-    sellerName: item.data.sellerName,
-    sellerNumber: item.data.sellerNumber
-  };
-}
-
-  // Save the selected card's data to local storage
-  localStorage.setItem('selectedCard', JSON.stringify(dataToSave));
-  console.log('Selected card saved to local storage:', dataToSave);
-  window.location = 'single-product.html';
-});
 
 
 const sale = card.querySelector(`#ribbon-${index}`)

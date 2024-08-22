@@ -1,7 +1,6 @@
-import { signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
-import { collection, addDoc, setDoc, doc,getDoc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
-import { onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
-import { getDownloadURL, uploadBytes, ref ,getStorage} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js";
+import { signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+import { onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+import { getDownloadURL, uploadBytes, ref ,getStorage} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-storage.js";
 import { auth, db } from './config.js';
 
 

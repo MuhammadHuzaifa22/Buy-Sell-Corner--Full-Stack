@@ -7,6 +7,9 @@
 
     <!-- ., Font Awesome Cdn -->
     <script src="https://kit.fontawesome.com/0ae0890014.js" crossorigin="anonymous"></script>
+
+    <!-- Flowbite Cdn Link -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 <body class="h-[120vh]">
 <!-- ., Navbar started -->
@@ -42,6 +45,7 @@
 <!-- ., Navbar ended -->
 
 
+
 <!-- ., Toast Started -->
 <div class="toast-msg"></div>
 <!-- ., Toast Ended -->
@@ -59,6 +63,7 @@
       <i class="fa-solid fa-plus text-white hover:text-black"></i>
       <input type="file" class="hidden" id="post-pic" />
   </label>
+  
   <h1 class="font-medium text-white text-md xs:text-lg sm:text-xl md:text-2xl lg:text-3xl cursor-pointer hover:text-black" id="uload-profile-image-name">Upload Product Photo</h1>
   </div>
   <div class="input-div flex flex-col gap-4 mt-8 mb-6">
@@ -67,33 +72,171 @@
     <input type="text" id="product-price" placeholder="Enter Price" class="w-full border px-4 py-2 text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl font-semibold border-gray-300">
     <input type="text" id="seller-name" placeholder="Enter Your Name" class="w-full border px-4 py-3 text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl font-semibold border-gray-300">
     <input type="text" id="seller-number" placeholder="Enter Your Number" class="w-full border px-4 py-3 text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl font-semibold border-gray-300">
+    <!-- Select options started -->
+
+<!-- Categories Dropdown -->
+<label for="countries" class=" block mb-2 text-lg font-medium text-gray-900 dark:text-white font-bold">Select a brand</label>
+<select class="border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus-ring-blue-500 mt-[-20px]" id="select-brand">
+  <option value="">Select a Brand</option>
+  <optgroup label="Electronics">
+    <option value="Apple">Apple</option>
+    <option value="Samsung">Samsung</option>
+    <option value="Google">Google</option>
+    <option value="Xiaomi">Xiaomi</option>
+    <option value="Huawei">Huawei</option>
+    <option value="OPPO">OPPO</option>
+    <option value="Vivo">Vivo</option>
+    <option value="OnePlus">OnePlus</option>
+    <option value="Realme">Realme</option>
+    <option value="Nokia">Nokia</option>
+    <option value="Dell">Dell</option>
+    <option value="HP">HP</option>
+    <option value="Lenovo">Lenovo</option>
+    <option value="Acer">Acer</option>
+    <option value="Asus">Asus</option>
+    <option value="Microsoft">Microsoft</option>
+    <option value="MSI">MSI</option>
+    <option value="Razer">Razer</option>
+    <option value="Alienware">Alienware</option>
+    <option value="Orient">Orient</option>
+    <option value="Singer">Singer</option>
+    <option value="USha">USha</option>
+    <option value="Crompton Greaves">Crompton Greaves</option>
+    <option value="Bajaj">Bajaj</option>
+    <option value="Luminous">Luminous</option>
+    <option value="V-Guard">V-Guard</option>
+    <option value="LG">LG</option>
+    <option value="Haier">Haier</option>
+    <option value="Whirlpool">Whirlpool</option>
+    <option value="Panasonic">Panasonic</option>
+    <option value="Hitachi">Hitachi</option>
+    <option value="Godrej">Godrej</option>
+    <option value="Blue Star">Blue Star</option>
+    <option value="Electrolux">Electrolux</option>
+    <option value="Kelvinator">Kelvinator</option>
+    <option value="Dawlance">Dawlance</option>
+    <option value="Supreme">Supreme</option>
+    <option value="PEL">PEL</option>
+    <option value="Changhong">Changhong</option>
+  </optgroup>
+
+  <optgroup label="Automobiles">
+    <option value="Suzuki">Suzuki</option>
+    <option value="Toyota">Toyota</option>
+    <option value="Honda">Honda</option>
+    <option value="KIA">KIA</option>
+    <option value="Hyundai">Hyundai</option>
+    <option value="Yamaha">Yamaha</option>
+    <option value="United Auto Industries (UAI)">United Auto Industries (UAI)</option>
+    <option value="Atlas Honda">Atlas Honda</option>
+  </optgroup>
+
+  <optgroup label="Food & Beverages">
+    <option value="Nestle">Nestle</option>
+    <option value="Coca-Cola">Coca-Cola</option>
+    <option value="Pepsi">Pepsi</option>
+    <option value="Unilever">Unilever</option>
+    <option value="Engro Foods">Engro Foods</option>
+    <option value="Shezan">Shezan</option>
+    <option value="Murree Brewery">Murree Brewery</option>
+    <option value="National Foods">National Foods</option>
+  </optgroup>
+
+  <optgroup label="Textiles & Apparel">
+    <option value="Gul Ahmed">Gul Ahmed</option>
+    <option value="Nishat Linen">Nishat Linen</option>
+    <option value="Sapphire">Sapphire</option>
+    <option value="Khaadi">Khaadi</option>
+    <option value="Alkaram">Alkaram</option>
+    <option value="J.">J.</option>
+    <option value="Maria B.">Maria B.</option>
+    <option value="Sana Safinaz">Sana Safinaz</option>
+    <option value="Limelight">Limelight</option>
+    <option value="Bonanza">Bonanza</option>
+  </optgroup>
+
+  <optgroup label="Telecommunication">
+    <option value="Jazz">Jazz</option>
+    <option value="Telenor">Telenor</option>
+    <option value="Zong">Zong</option>
+    <option value="Ufone">Ufone</option>
+  </optgroup>
+
+  <optgroup label="Banking">
+    <option value="Habib Bank">Habib Bank</option>
+    <option value="United Bank">United Bank</option>
+    <option value="Standard Chartered Bank">Standard Chartered Bank</option>
+    <option value="MCB Bank">MCB Bank</option>
+    <option value="Allied Bank">Allied Bank</option>
+  </optgroup>
+
+  <optgroup label="FMCG">
+    <option value="Colgate-Palmolive">Colgate-Palmolive</option>
+    <option value="P&G">P&G</option>
+    <option value="Reckitt Benckiser">Reckitt Benckiser</option>
+  </optgroup>
+
+  <optgroup label="Cement">
+    <option value="Lucky Cement">Lucky Cement</option>
+    <option value="Fauji Cement">Fauji Cement</option>
+    <option value="DG Khan Cement">DG Khan Cement</option>
+  </optgroup>
+</select>
+
+
+<label for="countries" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white font-bold mt-[-10px]">Select a condition of your product</label>
+<div class="w-full mt-[-10px]">
+  <select id="select-condition" class="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    <option value="">Choose a condition</option>
+    <option value="New">New</option>
+    <option value="Used">Used</option>
+    <option value="Used Upto 3 months">Used upto 3 months</option>
+</select>
+</div>
+<!-- Select options ended -->
   </div>
-  <div>
-    <h1 class="text-green-700 font-semibold text-2xl">Want to join the Azadi sale? Click here!   <h1 class="bg-green-700 text-white border border-white border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group cursor-pointer w-fit" id="sale-btn">
+  <div class="border-[1px] rounded-box p-[10px] border-[green]">
+    <h1 class="text-green-700 font-semibold text-2xl p-[10px] "><span id="want-text">Want to join the Azadi sale? Click here!</span>   <h1 class="bg-green-700 text-white border border-white border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group cursor-pointer w-fit" id="sale-btn">
     <span class="bg-white shadow-white absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>ON</h1></h1>
   </div>
   <h1 class="text-center text-sm sm:text-md md:text-lg lg:text-xl font-semibold text-green-700 absolute" id="alert-tag">In this sale, your product price will be reduced by 30%.</h1>
 
 
   <div class="flex justify-end mt-[20px]">
-    <button class="bg-primary text-white py-2 px-4 text-xs xs:text-xs sm:text-sm md:text-md lg:text-lg shadow-md rounded-lg uppercase font-semibold hover:shadow-lg active:border-2 border-white" type="submit" id="post-btn">Post Now</button>
+    <button class="bg-primary text-white py-2 px-4 text-xs xs:text-xs sm:text-sm md:text-md lg:text-lg shadow-md rounded-lg uppercase font-semibold hover:shadow-lg active:border-2 border-white mt-[10px]" type="submit" id="post-btn">Post Now</button>
   </div>
 </form>
 <!-- ., Content section ended -->
 
 
-<!-- ., Modal Started -->
+<!-- Modal Started -->
 <dialog id="my_modal_3" class="modal">
-  <div class="modal-box bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626]">
+  <div class="modal-box w-full max-w-sm sm:max-w-md md:max-w-lg bg-white p-6 rounded-lg shadow-lg text-gray-800">
     <form method="dialog">
-      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" id="cross-button">✕</button>
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-gray-600" id="cross-button">✕</button>
     </form>
-    <h3 class="text-sm sm:text-sm md:text-md lg:text-lg font-medium sm:font-medium md:font-semibold lg:font-bold">You are not logged in<br>
-      <b>Please Login OR Register to post your AD.</b>
-    </h3>
-    <div class="flex justify-center gap-4 mt-4">
-      <a href="login.html"><button class="text-sm xs:text-sm sm:text-lg md:text-xl lg:text-2xl py-2 px-4 rounded-md bg-blue-700 text-white hover:shadow-md active:border-1">Login</button></a>
-      <a href="register.html"><button class="text-sm xs:text-sm sm:text-lg md:text-xl lg:text-2xl py-2 px-4 rounded-md bg-blue-700 text-white hover:shadow-md active:border-1">Register</button></a>
+    <div class="flex flex-col items-center text-center">
+      <!-- Warning Icon -->
+      <i class="fa-solid fa-exclamation-triangle text-6xl text-yellow-500 mb-4"></i>
+      <!-- Message -->
+      <h3 class="text-lg md:text-xl lg:text-2xl font-semibold mb-4">
+        You are not logged in
+        <br>
+        <span class="font-bold">Please Login OR Register to post your AD.</span>
+      </h3>
+      <!-- Buttons -->
+      <div class="flex gap-4">
+        <a href="login.html">
+          <button class="flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-blue-600 text-white font-semibold hover:bg-blue-700 hover:shadow-lg active:border-2 border-transparent transition duration-300">
+            <i class="fa-solid fa-sign-in-alt"></i> Login
+          </button>
+        </a>
+        <a href="register.html">
+          <button class="flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-blue-600 text-white font-semibold hover:bg-blue-700 hover:shadow-lg active:border-2 border-transparent transition duration-300">
+            <i class="fa-solid fa-user-plus"></i> Register
+          </button>
+        </a>
+      </div>
     </div>
   </div>
 </dialog>
@@ -102,19 +245,53 @@
 
 
 
-<!-- ., Success Modal Section -->
-<dialog id="my_modal_4" class="modal">
-  <div class="modal-box w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl bg-gradient-to-r from-[#14b8a6] via-[#059669] to-[#047857] p-4 rounded-lg text-white">
+<dialog id="my_modal_2" class="modal">
+  <div class="modal-box bg-gradient-to-r from-[#4ade80] via-[#22c55e] to-[#16a34a] p-6 rounded-lg shadow-lg text-center">
     <form method="dialog">
-      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white" id="cross-button">✕</button>
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" id="cross-button">✕</button>
     </form>
-    <div class="flex flex-col gap-4 justify-center">
-      <i class="fa-regular fa-circle-check text-6xl mx-auto" id="icon-success"></i>
-      <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-center mt-2" id="msg-registered">Successfully Posted</h3>
-      <a href="index.html">
+    <div class="flex flex-col items-center">
+      <!-- Trophy Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-16 h-16 text-yellow-400 mb-4" viewBox="0 0 24 24">
+        <path d="M18 5V3H6v2H3v4c0 2.967 1.896 5.471 4.567 6.434C8.227 17.766 9.53 19.666 12 21c2.47-1.334 3.773-3.234 4.433-5.566C19.104 14.471 21 11.967 21 9V5h-3zM5 9V5h2v6.018c-1.221-.847-2-2.263-2-4.018zm7 10.75c-1.212-.774-2.09-1.77-2.645-2.842.87.103 1.791.092 2.682-.001.555 1.073 1.433 2.069 2.645 2.843zM19 9c0 1.755-.779 3.171-2 4.018V5h2v4zm-7-7v3h4V2h-4z"/>
+      </svg>
+      <!-- Congratulatory Message -->
+      <h3 class="text-lg md:text-xl font-bold text-white">
+        Congratulations!
+      </h3>
+      <p class="text-sm md:text-md text-white mt-2">
+        You are now a <span class="font-bold">Best Seller</span>.
+      </p>
+      <!-- Buttons -->
+      <div class="flex justify-center gap-4 mt-6">
+        <a href="dashboard.html"><button class="text-sm sm:text-lg md:text-xl py-2 px-4 rounded-md bg-blue-700 text-white hover:shadow-md active:border-1">Go to Dashboard</button></a>
+        <a href="profile.html"><button class="text-sm sm:text-lg md:text-xl py-2 px-4 rounded-md bg-blue-700 text-white hover:shadow-md active:border-1">View Profile</button></a>
+      </div>
+    </div>
+  </div>
+</dialog>
 
-        <button class="flex justify-center items-center gap-2 w-fit border-[1px] border-white p-[5px] cursor-pointer rounded-md shadow-lg text-white font-semibold bg-gradient-to-r from-[#3b82f6] via-[#2563eb] to-[#1e3a8a] hover:shadow-xl hover:scale-105 duration-300 mx-auto active:border-2 border-white">
-          Check Out <i class="fa-solid fa-house"></i>
+
+
+
+<!-- Success Modal Section -->
+<dialog id="my_modal_4" class="modal">
+  <div class="modal-box w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl bg-white p-6 rounded-lg shadow-lg text-gray-800">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-gray-500" id="cross-button">✕</button>
+    </form>
+    <div class="flex flex-col items-center text-center">
+      <!-- Updated Icon -->
+      <i class="fa-solid fa-check-circle text-6xl text-green-500 mb-4" id="icon-success"></i>
+      <h3 class="text-lg md:text-xl lg:text-2xl font-semibold mb-2" id="msg-registered">
+        Success!
+      </h3>
+      <p class="text-sm md:text-base text-gray-600 mb-4">
+        Your post was successfully added. You can now view it on the main page.
+      </p>
+      <a href="index.html">
+        <button class="flex justify-center items-center gap-2 w-fit px-4 py-2 rounded-md shadow-md text-white font-semibold bg-gradient-to-r from-[#4f46e5] via-[#3b82f6] to-[#2563eb] hover:shadow-lg hover:scale-105 duration-300 active:border-2 border-transparent">
+          <i class="fa-solid fa-house"></i> Go to Main Page
         </button>
       </a>
     </div>
@@ -124,10 +301,17 @@
 
 
 
+
+
+<button id="modal-two-button">Modal</button>
+
     <!-- ., Daisy Ui Cdn-->
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
 <!-- .,Tailwind CSS CDn -->
 <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Flowbite Cdn Link -->
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 
 <!-- ., JavaScript Link -->
 <script src="post-add.js" type="module"></script>

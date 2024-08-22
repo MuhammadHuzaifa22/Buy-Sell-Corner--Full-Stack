@@ -1,6 +1,6 @@
-import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
-import { setDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
-import { getDownloadURL, uploadBytes, ref } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js";
+import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+import { setDoc, doc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+import { getDownloadURL, uploadBytes, ref } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-storage.js";
 
 import { auth, db, storage } from './config.js';
 
@@ -205,12 +205,10 @@ form.addEventListener('submit', async (event) => {
     try {
         const userCredential = await createUserWithEmailAndPassword(auth, email.value, password.value);
         const user = userCredential.user;
-
         form.style.display = 'none';
         loadingMsg.style.display = 'block';
         loadingMsg.innerHTML = 'Registering...';
         loadingGif.style.display = 'block';
-
         const file = userPhoto.files[0];
         const storageRef = ref(storage, `userPhotos/${user.uid}/${file.name}`);
         await uploadBytes(storageRef, file);
@@ -231,10 +229,21 @@ form.addEventListener('submit', async (event) => {
             loadingMsg.innerHTML = '';
             registerBtn.classList.remove('loading', 'loading-bars', 'loading-md');
         }
-        localStorage.setItem('user-address',JSON.stringify(userAddress.value));
+        const currentAddress = JSON.stringify(userAddress.value);
+        const userOldAddress = JSON.parse(localStorage.getItem('user-address'));
+
+        if(userOldAddress === '' || userOldAddress === null){
+          localStorage.setItem('user-address',JSON.stringify(userAddress.value));
+        }else{
+            localStorage.setItem('user-address-new',JSON.stringify(userAddress.value));
+        }
+
+      
+
+     
         localStorage.setItem('user-prof-email',JSON.stringify(email.value));
         localStorage.setItem('user-prof-name',JSON.stringify(firstName.value));
-
+        localStorage.setItem('user-prof-lastname',JSON.stringify(lastName.value));
         await setDoc(doc(db, 'users', user.uid), {
             userAddress: userAddress.value,
             uid: user.uid,

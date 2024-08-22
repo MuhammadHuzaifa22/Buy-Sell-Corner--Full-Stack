@@ -1,9 +1,9 @@
-import { collection,getDocs, doc,addDoc,Timestamp, query, where, orderBy, } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
-import { onAuthStateChanged,signOut  } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import { collection,getDocs, doc,addDoc,Timestamp, query, where, orderBy, } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+import { onAuthStateChanged,signOut  } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 import { auth, db } from './config.js';
 
 
-// ., Call Variables
+// Declare Variables
 const avatarDiv = document.getElementById('avatar-div');
 const signInButtondiv = document.getElementById('sign-in-button-div');
 const userNavAvatar = document.getElementById('user-nav-avatar');
@@ -15,7 +15,14 @@ const modalDiv = document.querySelector('.modal-div');
 const div = document.getElementById('div');
 const preloader = document.getElementById('preloader');
 const registerAfterBtn = document.getElementById('register-after-btn');
+let userAddress = JSON.parse(localStorage.getItem('user-address'));
 
+
+if(userAddress){
+   userAddress = userAddress;
+}else{
+   userAddress = JSON.parse(localStorage.getItem('user-address-new'))
+}
 
 modalDiv.style.display = 'none';
 registerAfterBtn.style.display = 'none';
@@ -126,7 +133,7 @@ getData();
 
 
 function renderPosts() {
-  const div = document.getElementById('item-card'); // Assuming this is your container's ID
+  const div = document.getElementById('item-card');
   div.innerHTML = '';
 
   // Apply flexbox, gap, and wrap classes to the container
@@ -186,9 +193,7 @@ function renderPosts() {
   
   </div>
 `;
-
-
-
+console.log(item.data.sellerAddressNew)
 
 // Old Price
 const oldPrice =  card.querySelector(`#officialPrice-${index}`)
@@ -216,6 +221,7 @@ card.addEventListener("click",()=>{
       sellerName: item.data.sellerName,
       sellerNumber: item.data.sellerNumber,
       officialPrice:item.data.officialPrice,
+      sellAddress:item.data.sellerAddressNew
     };
   }else{
     dataToSave = {
@@ -225,7 +231,8 @@ card.addEventListener("click",()=>{
       price: item.data.productPrice,
       sellerPhoto: item.data.photoURL,
       sellerName: item.data.sellerName,
-      sellerNumber: item.data.sellerNumber
+      sellerNumber: item.data.sellerNumber,
+      sellAddress:item.data.sellerAddressNew
     };
   }
     localStorage.setItem('selectedCard', JSON.stringify(dataToSave));
@@ -247,6 +254,7 @@ buyBtn.addEventListener('click', () => {
     sellerName: item.data.sellerName,
     sellerNumber: item.data.sellerNumber,
     officialPrice:item.data.officialPrice,
+    sellAddress:item.data.sellerAddressNew
   };
 }else{
   dataToSave = {
@@ -256,7 +264,8 @@ buyBtn.addEventListener('click', () => {
     price: item.data.productPrice,
     sellerPhoto: item.data.photoURL,
     sellerName: item.data.sellerName,
-    sellerNumber: item.data.sellerNumber
+    sellerNumber: item.data.sellerNumber,
+    sellAddress:item.data.sellerAddressNew
   };
 }
 

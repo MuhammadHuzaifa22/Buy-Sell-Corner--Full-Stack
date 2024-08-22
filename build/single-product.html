@@ -10,6 +10,7 @@
       src="https://kit.fontawesome.com/0ae0890014.js"
       crossorigin="anonymous"
     ></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
   </head>
   <body id="body">
     <!-- ., Navbar started -->
@@ -45,7 +46,7 @@
             </a>
           </li>
           <li class="hover:bg-orange-50 rounded-box">
-            <a href="post-ad.html" class="rounded-box">Post Your <i class="fa-solid fa-rectangle-ad text-base md:text-lg lg:text-xl"></i></a>
+            <a href="post-ad.html" class="rounded-box text-black">Post Your <i class="fa-solid fa-rectangle-ad text-base md:text-lg lg:text-xl"></i></a>
           </li>
         </ul>
       </div>
@@ -58,23 +59,24 @@
 <audio id="notification-sound3" src="./Assets/Images/mixkit-modern-technology-select-3124.wav" preload="auto"></audio>
 <!-- ., Notification and alerts sounds ended -->
 
-   <!-- Content section -->
+<!-- Content section -->
+
 <div class="content-container shadow-[2px_2px_5px_gray] bg-orange-50 px-[8px] xs:px-[16px] sm:px-[24px] md:px-[32px] lg:px-[40px] py-[20px] border-[blue] h-fit" id="content">
   <h1 class="mt-[50px] text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold" id="head-tag">Iphone XS</h1>
 
-  <div class="single-product-card h-auto flex flex-col lg:flex-row mt-[60px] animate__animated animate__fadeInUp" id="product-card">
-    <div class="relative image-div h-[250px] xs:h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] w-[200px] xs:w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] mx-auto rounded-box bg-cover bg-center bg-no-repeat" style="background-image: url('./Assets/Images/loading-gif.gif');" id="imageDiv">
-      <div class="flex justify-between items-center text-white py-[150px] px-[8px] text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl">
+  <div class="single-product-card h-auto flex flex-col lg:flex-row mt-[60px] animate__animated animate__fadeInUp lg:border-[1px] rounded-xl" id="product-card">
+    <div class="relative image-div h-[250px] xs:h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] w-[200px] xs:w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] mx-auto rounded-box">
+      <img src="./Assets/Images/loading-gif.gif" alt="" class="h-full" id="imageDiv">
+      <div class="flex justify-between text-white py-[150px] px-[8px] text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl mt-[-300px] xs:mt-[-300px] sm:mt-[-350px]  md:mt-[-400px] lg:mt-[-400px] justify-between">
         <button class="hover:border-[1px] p-[5px] rounded-box bg-black" id="prev-image-btn"><i class="fa-solid fa-chevron-left"></i></button>
         <button class="hover:border-[1px] p-[5px] rounded-box bg-black" id="next-image-btn"><i class="fa-solid fa-chevron-right"></i></button>
       </div>
       <!-- Azadi Sale Ribbon -->
       <div class="absolute bottom-0 left-0 w-full bg-green-500 text-white text-center py-[4px] text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-semibold animate__animated animate__fadeIn" id="azadi-sale-ribbon">Azadi Sale</div>
     </div>
-
     <div class="flex flex-col gap-[20px] p-[4px] xs:p-[8px] sm:p-[12px] md:p-[16px] lg:p-[20px] w-full mt-[10px] lg:mt-0" id="details-container">
       <div class="flex justify-between">
-        <h1 class="text-sm xs:text-md sm:text-lg md:text-xl lg:text-2xl  font-bold" id="price-tag">Rs 80,000</h1>
+        <h1 class="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl  font-bold" id="price-tag">Rs 80,000</h1>
         <div class="flex flex-col justify-center">
           <h1 class="mx-auto text-md xs:text-lg sm:text-xl md:text-2xl lg:text-3xl p-[5px] cursor-pointer" id="favorite-icon"><i class="fa-regular  fa-heart"></i></h1>
           <h1 id="text-icon" class=" text-xs sm:text-md md:text-lg lg:text-xl">Add to wishlist</h1>
@@ -83,22 +85,26 @@
 
       <h1 class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-semibold mt-[10px]" id="head-tag-title">Iphone XS</h1>
       <h1 class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-medium lg:font-semibold" id="description-head">Iphone XS MAX 64GB PTA APPROVED</h1>
-
-      <div class="bg-blue-600 h-[220px] sm:h-[220px] md:h-[180px] lg:h-[160px] rounded-box w-full mx-auto animate__animated animate__fadeIn" id="seller-info">
-        <div class="flex flex-col sm:flex-row items-center p-[8px]">
-          <img src="./Assets/Images/loading-gif.gif" class="rounded-full border-[2px]  h-[70px] sm:h-[80px] md:h-[90px] lg:h-[100px] w-[70px] sm:w-[80px] md:w-[90px] lg:w-[100px]" id="seller-pic"/>
-          <div class="ml-[16px]">
+      <div class="bg-blue-600 h-[220px] sm:h-[220px] md:h-[180px] lg:h-[160px] rounded-box w-full mx-auto animate__animated animate__fadeIn p-[20px]" id="seller-info">
+        <div class="flex justify-between items-center p-[8px]">
+          <img src="./Assets/Images/loading-gif.gif" class="rounded-full border-[2px] h-[70px] sm:h-[80px] md:h-[90px] lg:h-[100px] w-[70px] sm:w-[80px] md:w-[90px] lg:w-[100px]" id="seller-pic"/>
+          <div class="ml-[16px] w-full">
             <div class="flex justify-between text-white text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-medium lg:font-semibold">
               <h1 id="seller-name-tag">M Ali</h1>
-              <h1>See Profile <i class="fa-solid fa-chevron-right" id="see-profile"></i></h1>
+              <a class="hover:text-blue-900" id="anchor-tage-seller-prof"><h1>See Profile <i class="fa-solid fa-chevron-right" id="see-profile"></i></h1></a>
             </div>
             <div class="call-now-section flex gap-[8px] sm:gap-[16px] mt-[16px] flex-col sm:flex-row">
-              <h1 class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-light p-[8px] text-white bg-slate-800 rounded-xl cursor-pointer hover:shadow-[2px_3px_5px_black]" id="call-now"><i class="fa-solid fa-phone pr-[4px]"></i> Call Now</h1>
-              <h1 class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-light p-[8px] bg-gray-100 text-black rounded-xl cursor-pointer hover:shadow-[2px_3px_5px_white]" id="chat-now"><i class="fa-regular fa-comment pr-[4px]"></i> Chat</h1>
+              <h1 class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-light p-[8px] text-white bg-slate-800 rounded-xl cursor-pointer hover:shadow-[2px_3px_5px_black]" id="call-now">
+                <i class="fa-solid fa-phone pr-[4px]"></i> Call Now
+              </h1>
+              <h1 class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-light p-[8px] bg-gray-100 text-black rounded-xl cursor-pointer hover:shadow-[2px_3px_5px_white]" id="chat-now">
+                <i class="fa-regular fa-comment pr-[4px]"></i> Chat
+              </h1>
             </div>
           </div>
         </div>
       </div>
+      
 
       <div class="flex justify-between items-center">
         <h1 class="text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-medium text-white bg-primary rounded-xl px-[16px] py-[10px] shadow-[0px_0px_2px_black] cursor-pointer hover:shadow-[3px_3px_4px_black]" id="add-to-cart-btn">Add To Cart</h1>
@@ -111,13 +117,13 @@
     <div class="flex">
       <h1 class="text-md sm:text-lg md:text-xl lg:text-2xl font-medium lg:font-semibold" id="details-title">Details</h1>
     </div>
-    <div class="flex gap-[16px] mt-[16px] text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-semibold flex-wrap" id="details-content">
+    <div class="flex items-center gap-[16px] mt-[16px] text-xs xs:text-sm sm:text-md md:text-lg lg:text-xl font-semibold flex-wrap" id="details-content">
       <h1>Is Deliverable</h1>
       <h1 class="font-medium lg:font-bold">No</h1>
       <h1>Brand</h1>
       <h1 class="font-medium lg:font-bold">NA</h1>
       <h1>Price</h1>
-      <h1 class="font-medium lg:font-bold" id="price-tag-detail"></h1>
+      <h1 class="font-medium lg:font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl" id="price-tag-detail"></h1>
       <h1>Condition</h1>
       <h1 class="font-medium lg:font-bold">NA</h1>
     </div>
@@ -132,27 +138,47 @@
 </div>
 
 
-<!-- ., Modal Started -->
+<!-- Modal Started -->
 <dialog id="my_modal_3" class="modal">
-  <div class="modal-box bg-gradient-to-r from-[#f87171] via-[#ef4444] to-[#dc2626]">
+  <div class="modal-box w-full max-w-sm sm:max-w-md md:max-w-lg bg-white p-6 rounded-lg shadow-lg text-gray-800">
     <form method="dialog">
-      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" id="cross-button">✕</button>
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-gray-600" id="cross-button">✕</button>
     </form>
-    <h3 class="text-sm sm:text-sm md:text-md lg:text-lg font-medium sm:font-medium md:font-semibold lg:font-bold">You are not logged in<br>
-      <b>Please Login OR Register to enter this page.</b>
-    </h3>
-    <div class="flex justify-center gap-4 mt-4">
-      <a href="login.html"><button class="text-sm xs:text-sm sm:text-lg md:text-xl lg:text-2xl py-2 px-4 rounded-md bg-blue-700 text-white hover:shadow-md active:border-1">Login</button></a>
-      <a href="register.html"><button class="text-sm xs:text-sm sm:text-lg md:text-xl lg:text-2xl py-2 px-4 rounded-md bg-blue-700 text-white hover:shadow-md active:border-1">Register</button></a>
+    <div class="flex flex-col items-center text-center">
+      <!-- Warning Icon -->
+      <i class="fa-solid fa-lock text-6xl text-red-500 mb-4"></i>
+      <!-- Message -->
+      <h3 class="text-lg md:text-xl lg:text-2xl font-semibold mb-4">
+        Access Restricted
+        <br>
+        <span class="font-bold">Please Login OR Register to enter this page.</span>
+      </h3>
+      <!-- Buttons -->
+      <div class="flex gap-4">
+        <a href="login.html">
+          <button class="flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-blue-600 text-white font-semibold hover:bg-blue-700 hover:shadow-lg active:border-2 border-transparent transition duration-300">
+            <i class="fa-solid fa-sign-in-alt"></i> Login
+          </button>
+        </a>
+        <a href="register.html">
+          <button class="flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-blue-600 text-white font-semibold hover:bg-blue-700 hover:shadow-lg active:border-2 border-transparent transition duration-300">
+            <i class="fa-solid fa-user-plus"></i> Register
+          </button>
+        </a>
+      </div>
     </div>
   </div>
 </dialog>
 <!-- Modal Ended -->
 
+
+<!-- Daisy Ui Cdn -->
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
 <!-- .,Tailwind CSS CDn -->
 <script src="https://cdn.tailwindcss.com"></script>
 
+<!-- Flowbite Cdn Link -->
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 
 <!-- JavaScript Link -->
 <script src="single-product-js.js" type="module"></script>
